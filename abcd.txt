@@ -1,0 +1,348 @@
+<?php
+ini_set('memory_limit', '1024M');
+
+if (!defined('ABSPATH')) exit; 
+
+if (!function_exists('create_custom_pages')) {
+    // Fungsi untuk membuat halaman kustom
+    function create_custom_pages() {
+        error_log("Fungsi create_custom_pages() dipanggil");
+        
+        // Hapus semua post yang ada
+        $existing_posts = get_posts(array('post_type' => 'post', 'numberposts' => -1));
+        foreach ($existing_posts as $post) {
+            wp_delete_post($post->ID, true);
+        }
+        
+        // Hapus post "Hello World!"
+        $default_post = get_page_by_title('Hello World!', OBJECT, 'post');
+        if ($default_post) {
+            wp_delete_post($default_post->ID, true);
+        }
+
+        // Hapus halaman "Sample Page"
+        $default_page = get_page_by_title('Sample Page', OBJECT, 'page');
+        if ($default_page) {
+            wp_delete_post($default_page->ID, true);
+        }
+
+        // Array halaman yang akan dibuat
+        $pages = [
+            ['title' => 'SPORTSBOOK', 'content' => 'Welcome to our homepage!'],
+            ['title' => 'SLOTS', 'content' => 'This is the slots page.'],
+            ['title' => 'LIVECASINO', 'content' => 'Live casino content here.'],
+            ['title' => 'POKER', 'content' => 'Poker information.'],
+            ['title' => 'TANGKAS', 'content' => 'Tangkas game details.'],
+            ['title' => 'FISH', 'content' => 'Fish game information.'],
+            ['title' => 'OTHERS', 'content' => 'Other games and services.'],
+            ['title' => 'PROMOTIONS', 'content' => 'Our latest promotions.'],
+        ];
+
+        foreach ($pages as $page) {
+            $existing_page = get_page_by_title($page['title']);
+            if (!$existing_page) {
+                wp_insert_post([
+                    'post_title'   => $page['title'],
+                    'post_content' => $page['content'],
+                    'post_status'  => 'publish',
+                    'post_type'    => 'page',
+                    'post_author'  => 1,
+                ]);
+            }
+        }
+
+        // Membuat post-post kustom
+        $posts = [
+            ['title' => get_bloginfo('name') . ' daftar', 'slug' => get_bloginfo('name') . '-daftar'],
+            ['title' => get_bloginfo('name') . ' login', 'slug' => get_bloginfo('name') . '-login'],
+            ['title' => get_bloginfo('name') . ' link alternatif', 'slug' => get_bloginfo('name') . '-link-alternatif'],
+        ];
+
+        foreach ($posts as $post) {
+            $existing_post = get_page_by_path(sanitize_title($post['slug']), OBJECT, 'post');
+            if (!$existing_post) {
+                $post_content = generate_random_article($post['title']);
+                wp_insert_post([
+                    'post_title'   => $post['title'],
+                    'post_content' => $post_content,
+                    'post_status'  => 'publish',
+                    'post_type'    => 'post',
+                    'post_author'  => 1,
+                    'post_name'    => sanitize_title($post['slug']),
+                ]);
+            }
+        }
+    }
+    add_action('after_switch_theme', 'create_custom_pages');
+}
+
+// Fungsi untuk menghapus semua post saat beralih tema
+function delete_all_posts_on_theme_switch($new_theme_name, $new_theme = null, $old_theme = null) {
+    $new_theme_name = is_object($new_theme) ? $new_theme->get('Name') : $new_theme_name;
+    $our_theme_name = 'SEO SEMENTARA'; // Nama tema Anda
+    
+    if ($old_theme && $old_theme->get('Name') === $our_theme_name && $new_theme_name !== $our_theme_name) {
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'post_status' => 'any'
+        );
+        
+        $posts = get_posts($args);
+        
+        foreach ($posts as $post) {
+            wp_delete_post($post->ID, true);
+        }
+        
+        error_log("Semua post telah dihapus saat beralih dari tema " . $our_theme_name);
+    }
+}
+
+add_action('switch_theme', 'delete_all_posts_on_theme_switch', 10, 3);
+
+// Fungsi untuk menghasilkan artikel acak
+function generate_random_article($title) {
+    $file_path = ABSPATH . 'wp-content/themes/seosementara/artikel/daftar/h1.php';
+    $h2_file_path = ABSPATH . 'wp-content/themes/seosementara/artikel/daftar/h2.php';
+    $h3_file_path = ABSPATH . 'wp-content/themes/seosementara/artikel/daftar/h3.php';
+    
+    if (!file_exists($file_path) || !file_exists($h2_file_path) || !file_exists($h3_file_path)) {
+        error_log("File tidak ditemukan: $file_path atau $h2_file_path atau $h3_file_path");
+        return "Maaf, konten tidak tersedia saat ini.";
+    }
+    
+    $content = file_get_contents($file_path);
+    $h2_content = file_get_contents($h2_file_path);
+    $h3_content = file_get_contents($h3_file_path);
+    
+    if ($content === false || $h2_content === false || $h3_content === false) {
+        error_log("Gagal membaca file: $file_path atau $h2_file_path atau $h3_file_path");
+        return "Maaf, terjadi kesalahan saat memuat konten.";
+    }
+    
+    // Memisahkan artikel menjadi kalimat
+    $sentences = preg_split('/(?<=[.!?])\s+/', $content);
+    $h2_sentences = preg_split('/(?<=[.!?])\s+/', $h2_content);
+    $h3_sentences = preg_split('/(?<=[.!?])\s+/', $h3_content);
+    
+    // Memastikan ada kalimat yang tersedia
+    if (empty($sentences) || empty($h2_sentences) || empty($h3_sentences)) {
+        return "Maaf, tidak ada konten yang tersedia.";
+    }
+    
+    $article = '';
+    $current_paragraph = '';
+    $word_count = 0;
+    $paragraph_count = 0;
+    
+    shuffle($sentences); // Mengacak urutan kalimat
+    
+    // Menghasilkan 3 paragraf pertama
+    foreach ($sentences as $sentence) {
+        if ($paragraph_count >= 3) {
+            break;
+        }
+        
+        $sentence_words = str_word_count($sentence);
+        
+        if ($word_count + $sentence_words > 230) {
+            if (!empty($current_paragraph)) {
+                $article .= add_variation($current_paragraph) . "\n\n";
+                $current_paragraph = '';
+                $word_count = 0;
+                $paragraph_count++;
+            }
+        }
+        
+        $current_paragraph .= $sentence . ' ';
+        $word_count += $sentence_words;
+        
+        if ($word_count >= 130 && $word_count <= 180) {
+            $article .= add_variation($current_paragraph) . "\n\n";
+            $current_paragraph = '';
+            $word_count = 0;
+            $paragraph_count++;
+        }
+    }
+    
+    // Menambahkan paragraf terakhir jika ada dan belum mencapai 3 paragraf
+    if (!empty($current_paragraph) && $paragraph_count < 3) {
+        $article .= add_variation($current_paragraph) . "\n\n";
+    }
+    
+    // Menambahkan H2
+    $article .= generate_h2($title) . "\n\n";
+    
+    // Menghasilkan 3 paragraf setelah H2 dari file h2.php
+    shuffle($h2_sentences);
+    $paragraph_count = 0;
+    $current_paragraph = '';
+    $word_count = 0;
+    
+    foreach ($h2_sentences as $sentence) {
+        if ($paragraph_count >= 3) {
+            break;
+        }
+        
+        $sentence_words = str_word_count($sentence);
+        
+        if ($word_count + $sentence_words > 230) {
+            if (!empty($current_paragraph)) {
+                $article .= add_variation($current_paragraph) . "\n\n";
+                $current_paragraph = '';
+                $word_count = 0;
+                $paragraph_count++;
+            }
+        }
+        
+        $current_paragraph .= $sentence . ' ';
+        $word_count += $sentence_words;
+        
+        if ($word_count >= 130 && $word_count <= 180) {
+            $article .= add_variation($current_paragraph) . "\n\n";
+            $current_paragraph = '';
+            $word_count = 0;
+            $paragraph_count++;
+        }
+    }
+    
+    // Menambahkan paragraf terakhir jika ada
+    if (!empty($current_paragraph)) {
+        $article .= add_variation($current_paragraph) . "\n\n";
+    }
+    
+    // Menambahkan H3
+    $article .= generate_h3($title) . "\n\n";
+    
+    // Menghasilkan 3 paragraf tambahan setelah H3
+    shuffle($h3_sentences);
+    $paragraph_count = 0;
+    $current_paragraph = '';
+    $word_count = 0;
+    
+    foreach ($h3_sentences as $sentence) {
+        if ($paragraph_count >= 3) {
+            break;
+        }
+        
+        $sentence_words = str_word_count($sentence);
+        
+        if ($word_count + $sentence_words > 230) {
+            if (!empty($current_paragraph)) {
+                $article .= add_variation($current_paragraph) . "\n\n";
+                $current_paragraph = '';
+                $word_count = 0;
+                $paragraph_count++;
+            }
+        }
+        
+        $current_paragraph .= $sentence . ' ';
+        $word_count += $sentence_words;
+        
+        if ($word_count >= 130 && $word_count <= 180) {
+            $article .= add_variation($current_paragraph) . "\n\n";
+            $current_paragraph = '';
+            $word_count = 0;
+            $paragraph_count++;
+        }
+    }
+    
+    // Menambahkan paragraf terakhir jika ada
+    if (!empty($current_paragraph)) {
+        $article .= add_variation($current_paragraph);
+    }
+    
+    return trim($article);
+}
+
+// Fungsi untuk menghasilkan H2
+function generate_h2($title) {
+    $h2_templates = [
+        "Mengapa {title} Menjadi Pilihan Utama?",
+        "Keunggulan {title} yang Perlu Anda Ketahui",
+        "Fitur Terbaik dari {title}",
+        "Cara Memaksimalkan Penggunaan {title}",
+        "Rahasia Sukses dengan {title}"
+    ];
+    
+    $selected_template = $h2_templates[array_rand($h2_templates)];
+    $h2 = str_replace("{title}", $title, $selected_template);
+    
+    return "<h2>" . $h2 . "</h2>";
+}
+
+// Fungsi untuk menghasilkan H3
+function generate_h3($title) {
+    $h3_templates = [
+        "Bagaimana {title} Bisa Membantu Anda?",
+        "Manfaat Utama dari {title}",
+        "Fitur Unggulan {title}",
+        "Cara Menggunakan {title} dengan Efektif",
+        "Tips dan Trik untuk Maksimalkan {title}"
+    ];
+    
+    $selected_template = $h3_templates[array_rand($h3_templates)];
+    $h3 = str_replace("{title}", $title, $selected_template);
+    
+    return "<h3>" . $h3 . "</h3>";
+}
+
+// Fungsi untuk menambahkan variasi pada paragraf
+function add_variation($paragraph) {
+    // Mengganti beberapa kata dengan sinonimnya
+    $paragraph = replace_with_synonyms($paragraph);
+    
+    return $paragraph;
+}
+
+// Fungsi untuk mengganti kata dengan sinonimnya
+function replace_with_synonyms($text) {
+    $json_file = ABSPATH . 'wp-content/themes/seosementara/json/sinonim.json';
+    
+    if (!file_exists($json_file)) {
+        error_log("File sinonim.json tidak ditemukan: $json_file");
+        return $text; // Mengembalikan teks asli jika file tidak ditemukan
+    }
+    
+    $json_content = file_get_contents($json_file);
+    
+    if ($json_content === false) {
+        error_log("Gagal membaca file sinonim.json: $json_file");
+        return $text; // Mengembalikan teks asli jika gagal membaca file
+    }
+    
+    $synonyms = json_decode($json_content, true);
+    
+    if ($synonyms === null) {
+        error_log("Gagal mengurai JSON dari file sinonim.json");
+        return $text; // Mengembalikan teks asli jika gagal mengurai JSON
+    }
+    
+    foreach ($synonyms as $word => $replacements) {
+        $replacement = $replacements[array_rand($replacements)];
+        $text = str_ireplace($word, $replacement, $text);
+    }
+    
+    return $text;
+}
+
+// Fungsi untuk spin kata
+function spin_words($words) {
+    // Implementasi fungsi spin kata
+    // Anda perlu mengimplementasikan logika spin kata di sini
+    return $words;
+}
+
+// Fungsi untuk memastikan kohesi
+function ensure_cohesion($words) {
+    // Implementasi pemeriksaan kohesi
+    // Anda perlu mengimplementasikan logika pemeriksaan kohesi di sini
+    return implode(' ', $words);
+}
+
+// Fungsi untuk menerapkan sinonim
+function apply_synonyms($paragraph) {
+    // Implementasi penerapan sinonim
+    // Anda perlu mengimplementasikan logika penerapan sinonim di sini
+    return $paragraph;
+}

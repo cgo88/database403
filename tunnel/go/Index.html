@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Folder</title>
+    <script>
+        function authenticate() {
+            var username = prompt("Enter username:");
+            var password = prompt("Enter password:");
+
+            // Ganti dengan username dan password yang diinginkan
+            var validUsername = "seosementara";
+            var validPassword = "Nikah10kali*";
+
+            if (username === validUsername && password === validPassword) {
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("Invalid credentials!");
+                window.location.href = "https://yourwebsite.com"; // Redirect ke halaman lain
+            }
+        }
+    </script>
+</head>
+<body onload="authenticate()">
+    <div id="content" style="display:none;">
+        <h1>Welcome to the protected folder</h1>
+        <p>Only authorized users can see this content.</p>
+        <!-- Tambahkan konten folder protected di sini -->
+        <a href="go.php">Access go.php</a>
+    </div>
+</body>
+</html>
