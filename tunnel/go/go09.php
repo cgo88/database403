@@ -62,7 +62,7 @@ $templatePaths = [
 ];
 
 // Path dari list.txt lokal
-$listPath = __DIR__ . '/list10.txt';
+$listPath = __DIR__ . '/list09.txt';
 
 // Memproses file list.txt utama
 processList($listPath, $templatePaths);
