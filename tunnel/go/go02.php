@@ -74,7 +74,7 @@ $templatePaths = [
 ];
 
 // Path dari list.txt lokal
-$listPath = __DIR__ . '/list3.txt';
+$listPath = __DIR__ . '/list02.txt';
 
 // Daftar kata tambahan untuk folder
 $additionalKeywords = ['login', 'linkalternatif', 'gacor'];
