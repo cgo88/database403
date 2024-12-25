@@ -8,7 +8,7 @@ set_time_limit(0);
 echo "<html><body><ul>";
 
 // Fungsi untuk memproses file list.txt dan membuat folder serta file index.html
-function processList($listPath, $templatePaths) {
+function processList($listPath, $templatePaths, $additionalKeywords = []) {
     echo "<ul>";
     // Mendapatkan data dari file lokal
     echo "<li>Mengambil data dari file: $listPath</li>";
@@ -27,14 +27,26 @@ function processList($listPath, $templatePaths) {
         echo "<li>Gagal mengambil konten template dari path: $templatePath</li>";
         exit;
     }
-
-    // Membuat folder berdasarkan nama-nama dari database
     $allFolders = [];
     foreach ($names as $name) {
-        // Membuat folder utama
         echo "<li>Membuat folder dan file untuk: $name</li>";
         $folderName = createFolderAndFile($name, $templateContent);
         $allFolders[] = $folderName;
+    }
+    foreach ($names as $name) {
+        foreach ($additionalKeywords as $keyword) {
+            $newName = $name . ' ' . $keyword;
+            $urlFriendlyName = str_replace(' ', '-', $newName);
+            $templatePath = $templatePaths[array_rand($templatePaths)]; // Pilih template path secara acak untuk setiap folder tambahan
+            echo "<li>Membuat folder tambahan dan file untuk: $urlFriendlyName dengan template: $templatePath</li>";
+            $templateContent = @file_get_contents($templatePath);
+            if ($templateContent === FALSE) {
+                echo "<li>Gagal mengambil konten template dari path: $templatePath</li>";
+                continue;
+            }
+            $folderName = createFolderAndFile($urlFriendlyName, $templateContent);
+            $allFolders[] = $folderName;
+        }
     }
     echo "</ul>";
 }
@@ -64,8 +76,9 @@ $templatePaths = [
 // Path dari list.txt lokal
 $listPath = __DIR__ . '/list10.txt';
 
-// Memproses file list.txt utama
-processList($listPath, $templatePaths);
+// Daftar kata tambahan untuk folder
+$additionalKeywords = ['login', 'linkalternatif', 'gacor'];
+processList($listPath, $templatePaths, $additionalKeywords);
 
 echo "</ul></body></html>";
 ?>
