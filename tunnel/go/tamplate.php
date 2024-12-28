@@ -738,28 +738,28 @@ $randomRating = getRandomRating();
           "position": 1,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "$folderNameDisplay"
+            "name": "<?php echo htmlspecialchars($folder_clean); ?>"
           }
         }, {
           "@type": "ListItem",
           "position": 2,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "Slot $folderNameDisplay"
+            "name": "Slot <?php echo htmlspecialchars($folder_clean); ?>"
           }
         }, {
           "@type": "ListItem",
           "position": 3,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "RTP $folderNameDisplay"
+            "name": "RTP <?php echo htmlspecialchars($folder_clean); ?>"
           }
         }, {
           "@type": "ListItem",
           "position": 4,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "$folderNameDisplay"
+            "name": "<?php echo htmlspecialchars($folder_clean); ?>"
           }
         }, {
           "@type": "ListItem",
@@ -795,7 +795,7 @@ $randomRating = getRandomRating();
           "author": {
             "@type": "Person",
             "name": "Robert Lee",
-            "reviewBody": "Buat anda yang ingin mencoba bergabung di $folderNameDisplay ayo buruan untuk tunjukan eksetensi sendiri karena situs ini beneran nyata selalu memberikan jackpot cepat!"
+            "reviewBody": "Buat anda yang ingin mencoba bergabung di <?php echo htmlspecialchars($folder_clean); ?> ayo buruan untuk tunjukan eksetensi sendiri karena situs ini beneran nyata selalu memberikan jackpot cepat!"
           }
         },
         "offers": {
@@ -894,12 +894,12 @@ $randomRating = getRandomRating();
                 </div>
                   <div class="top-links-item" id="topActionFeedback">
                       <a class="highlight" target="_blank" href="<?php echo htmlspecialchars($permalink); ?>
-" data-spm-click="gostr=/lzdpub.header.tbar;locaid=dfeedback">$folderNameDisplay</a>
-                     <div style="display:none;"><a href="<?php echo htmlspecialchars($permalink); ?>">situs slot $folderNameDisplay</a></div>
+" data-spm-click="gostr=/lzdpub.header.tbar;locaid=dfeedback"><?php echo htmlspecialchars($folder_clean); ?></a>
+                     <div style="display:none;"><a href="<?php echo htmlspecialchars($permalink); ?>">situs slot <?php echo htmlspecialchars($folder_clean); ?></a></div>
                   </div>
                     <div class="top-links-item orange" id="topActionDownload" data-spm-click="gostr=<?php echo htmlspecialchars($permalink); ?>
 ">
-                        <span>Slot $folderNameDisplay</span>
+                        <span>Slot <?php echo htmlspecialchars($folder_clean); ?></span>
                         <div class="lzd-download-popup top-popup-wrap" id="lzdDownloadPopup">
   <div class="top-popup-content lzd-download-content">
     <div class="get-the-app-scope">
@@ -907,7 +907,7 @@ $randomRating = getRandomRating();
         <div class="get-the-app-title">Download Aplikasinya dan Belanja Sekarang!</div>
         <div class="get-the-app-promotion">
             <div class="get-the-app-lazada-qr-wrap">
-              <img class="get-the-app-lazada-qr" src="//laz-img-cdn.alicdn.com/images/ims-web/TB1b43RtrvpK1RjSZFqXXcXUVXa.png" alt="$folderNameDisplay login">
+              <img class="get-the-app-lazada-qr" src="//laz-img-cdn.alicdn.com/images/ims-web/TB1b43RtrvpK1RjSZFqXXcXUVXa.png" alt="<?php echo htmlspecialchars($folder_clean); ?> login">
             </div>
           <div class="promotion-text">
             <a href="//pages.lazada.co.id/wow/i/id/IDCampaign/Download-App?hybrid=1">
@@ -948,10 +948,10 @@ $randomRating = getRandomRating();
     </div>
         <div class="top-links-item" id="topActionSell">
         <a class="cyan" href="<?php echo htmlspecialchars($permalink); ?>
-" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d2">$folderNameDisplay Hari Ini</a></div>
+" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d2"><?php echo htmlspecialchars($folder_clean); ?> Hari Ini</a></div>
         <div class="top-links-item" id="topActionCustomCare" data-spm-click="gostr=<?php echo htmlspecialchars($permalink); ?>
 ">
-        <span>$folderNameDisplay</span>
+        <span><?php echo htmlspecialchars($folder_clean); ?></span>
     <div class="lzd-customcare-popup top-popup-wrap">
 <div class="top-popup-content l-customcare-content">
     <ul class="care-list">
@@ -1003,12 +1003,12 @@ $randomRating = getRandomRating();
 </div>
     </div>
         <div class="top-links-item grey" id="topActionTrack" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d4">
-        <span>Apk $folderNameDisplay</span>
+        <span>Apk <?php echo htmlspecialchars($folder_clean); ?></span>
     <div class="lzd-track-popup top-popup-wrap" id="lzdTrackPop">
   <div class="top-popup-content lzd-track-content">
     <div id="topActionMyLastOrder">
     </div>
-    <div class="track-title">$folderNameDisplay</div>
+    <div class="track-title"><?php echo htmlspecialchars($folder_clean); ?></div>
     <form class="track-order-form" id="topActionTrackForm">
       <label for="topActionTrackOrderNumber" class="top-input-label">Nomor pesanan:</label>
       <div class="top-input-wrap track-order-input-wrap">
@@ -1024,7 +1024,7 @@ $randomRating = getRandomRating();
 </div>
                   </div>
                 <div class="top-links-item  grey" id="anonLogin">
-                  <a class="grey" href="https://t.ly/vipxx" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d5">$folderNameDisplay LOGIN</a>
+                  <a class="grey" href="https://t.ly/vipxx" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d5"><?php echo htmlspecialchars($folder_clean); ?> LOGIN</a>
                 </div>
                 <div class="top-links-item  grey" id="anonSignup">
                   <a class="grey" href="https://t.ly/vipxx" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d6">DAFTAR</a>
@@ -1072,7 +1072,7 @@ $randomRating = getRandomRating();
         </div>
         <div class="lzd-logo-bar">
           <div class="logo-bar-content header-content">
-              <div class="lzd-logo-content"><a href="//www.lazada.co.id/" data-spm="dhome"><img src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_6a506853b98f4e0fa85daccd1548ebcd.png" alt="$folderNameDisplay"></a></div>
+              <div class="lzd-logo-content"><a href="//www.lazada.co.id/" data-spm="dhome"><img src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_6a506853b98f4e0fa85daccd1548ebcd.png" alt="<?php echo htmlspecialchars($folder_clean); ?>"></a></div>
               <div class="lzd-nav-search " data-spm="search">
                 <marquee behavior="" direction="">
                   <?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?>
@@ -2125,28 +2125,28 @@ $randomRating = getRandomRating();
                     <img alt="Ikon LazMall" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-LazMall">&#xe629;</i>-->
-                <span class="lzd-menu-labels-item-text">$folderNameDisplay</span>
+                <span class="lzd-menu-labels-item-text"><?php echo htmlspecialchars($folder_clean); ?></span>
             </a>
             <a class="lzd-menu-labels-item" href="//pages.lazada.co.id/wow/i/id/digitalgoods/home?hybrid=1&amp;scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207798_7692459">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
                     <img alt="Pulsa &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-MobileTop1">&#xe768;</i>-->
-                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay</span>
+                        <span class="lzd-menu-labels-item-text">Link <?php echo htmlspecialchars($folder_clean); ?></span>
             </a>
             <a class="lzd-menu-labels-item" href="//pages.lazada.co.id/wow/gcp/route/lazada/id/upr_1000345_lazada/channel/id/upr-router/id_upr?hybrid=1&amp;data_prefetch=true&amp;at_iframe=1&amp;wh_pid=/lazada/channel/id/all-promo/mcp-ush&amp;scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207802_7692459&amp;prefetch_replace=1">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
                     <img alt="Voucher &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-Vouchers">&#xe76a;</i>-->
-                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay Hari Ini</span>
+                        <span class="lzd-menu-labels-item-text">Link <?php echo htmlspecialchars($folder_clean); ?> Hari Ini</span>
             </a>
             <a class="lzd-menu-labels-item" href="//www.lazada.co.id/blog/?scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207806_7692459">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
                     <img alt="Ikon LazBlog" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-Categories">&#xe765;</i>-->
-                <span class="lzd-menu-labels-item-text">$folderNameDisplay Gacor</span>
+                <span class="lzd-menu-labels-item-text"><?php echo htmlspecialchars($folder_clean); ?> Gacor</span>
             </a>
         </nav>
     </div>
@@ -3209,14 +3209,14 @@ $randomRating = getRandomRating();
                     <img alt="LazMall" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-LazMall">&#xe629;</i>-->
-                <span class="lzd-menu-labels-item-text">$folderNameDisplay</span>
+                <span class="lzd-menu-labels-item-text"><?php echo htmlspecialchars($folder_clean); ?></span>
             </a>
             <a class="lzd-menu-labels-item" href="<?php echo htmlspecialchars($permalink); ?>">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
                     <img alt="Pulsa &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-MobileTop1">&#xe768;</i>-->
-                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay
+                        <span class="lzd-menu-labels-item-text">Link <?php echo htmlspecialchars($folder_clean); ?>
                         </span>
             </a>
             <a class="lzd-menu-labels-item" href="<?php echo htmlspecialchars($permalink); ?>">
@@ -3224,14 +3224,14 @@ $randomRating = getRandomRating();
                     <img alt="Voucher &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-Vouchers">&#xe76a;</i>-->
-                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay Hari Ini</span>
+                        <span class="lzd-menu-labels-item-text">Link <?php echo htmlspecialchars($folder_clean); ?> Hari Ini</span>
             </a>
             <a class="lzd-menu-labels-item" href="<?php echo htmlspecialchars($permalink); ?>">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
                     <img alt="LazBlog" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-Categories">&#xe765;</i>-->
-                <span class="lzd-menu-labels-item-text">$folderNameDisplay</span>
+                <span class="lzd-menu-labels-item-text"><?php echo htmlspecialchars($folder_clean); ?></span>
             </a>
         </nav>
     </div>
@@ -3518,23 +3518,23 @@ if (!lzdDocCookies.getItem('t_uid')) {
         <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 4"/>
         <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 5"/>
         </div><a class="pdp-link pdp-link_size_s pdp-link_theme_blue pdp-review-summary__link" data-spm-anchor-id="a2o4j.pdp_revamp.0.0"><?php echo getRandomPriceLow(); ?> Penilaian</a></div></div></div><div id="block-ztlO6gvyRIv" class="pdp-block pdp-block__share"><div id="block--PRjoF98du4" class="pdp-block" style="display:inline-block;width:24px;height:54px"><div id="module_product_share_1" class="pdp-block module"></div></div><div id="block-7fC8S_Z8DDj" class="pdp-block" style="display:inline-block"><div id="module_product_wishlist_1" class="pdp-block module"><p></p></div></div></div></div><div id="module_product_brand_1" class="pdp-block module"><div class="pdp-product-brand"><span class="pdp-product-brand__name">Merek<!-- -->:<!-- --> </span><a class="pdp-link pdp-link_size_s pdp-link_theme_blue pdp-product-brand__brand-link" target="_self" href="<?php echo htmlspecialchars($permalink); ?>
-">$folderNameDisplay</a><div class="pdp-product-brand__divider"></div></div></div><div id="module_product_attrs" class="pdp-block module"></div>
+"><?php echo htmlspecialchars($folder_clean); ?></a><div class="pdp-product-brand__divider"></div></div></div><div id="module_product_attrs" class="pdp-block module"></div>
     <div id="block-cKVxLtoIbl2" class="pdp-block module"></div>
     <div id="module_product_price_1" class="pdp-block module">
     <div class="pdp-mod-product-price">
 
       <h1><?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?></h1>
 
-      <p style="text-align: justify;"><a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay</a> banyak hiburan pilihan dengan permainan yang telah di sedikan oleh situs slot $folderNameDisplay dan juga sudah pernah berkolaborasi dengan member yang menang menjadikan situs slot777 yang percaya di permainan slot paling maju di tahun 2024. Mari untuk mencoba bermain dengan maxwin dan bergabung bersama situs <a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay slot gacor</a> kami di sini dan dapatkan jackpot nya setiap saat.</p><br>
+      <p style="text-align: justify;"><a href="<?php echo htmlspecialchars($permalink); ?>"><?php echo htmlspecialchars($folder_clean); ?></a> banyak hiburan pilihan dengan permainan yang telah di sedikan oleh situs slot <?php echo htmlspecialchars($folder_clean); ?> dan juga sudah pernah berkolaborasi dengan member yang menang menjadikan situs slot777 yang percaya di permainan slot paling maju di tahun 2024. Mari untuk mencoba bermain dengan maxwin dan bergabung bersama situs <a href="<?php echo htmlspecialchars($permalink); ?>"><?php echo htmlspecialchars($folder_clean); ?> slot gacor</a> kami di sini dan dapatkan jackpot nya setiap saat.</p><br>
 
-      <p style="text-align: justify;">$folderNameDisplay adalah salah satu situs <a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay</a> yang sedang maximal di hari ini yang gampang menang serta dengan berlisensi dari $folderNameDisplay meyediakan banyak nya permainan yang mudah menang nya terutama untuk slot $folderNameDisplay hari ini serta untuk di beri kesempatan untuk bocoran presentasi 97% di seluruh permainan yang bisa di akses melalui link slot gacor gampang maxwin di hari ni.</p><br>
+      <p style="text-align: justify;"><?php echo htmlspecialchars($folder_clean); ?> adalah salah satu situs <a href="<?php echo htmlspecialchars($permalink); ?>"><?php echo htmlspecialchars($folder_clean); ?></a> yang sedang maximal di hari ini yang gampang menang serta dengan berlisensi dari <?php echo htmlspecialchars($folder_clean); ?> meyediakan banyak nya permainan yang mudah menang nya terutama untuk slot <?php echo htmlspecialchars($folder_clean); ?> hari ini serta untuk di beri kesempatan untuk bocoran presentasi 97% di seluruh permainan yang bisa di akses melalui link slot gacor gampang maxwin di hari ni.</p><br>
 
-      <p style="text-align: justify;">Untuk pilihan utama nya di vendor permainan sebagai <a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay login</a> gampang menang banyak sekali yang ingin mengajak bermain dengan beberapa bocoran setiap permainan nya, serta dengan kemudahan untuk melakukan deposit dan untuk meraih jackpot nya hingga x5000 di setiap permainan slot yang sudah terkenal. Untuk menjadi salah satu member di situs slot $folderNameDisplay tanpa di pungut biaya sepeserpun. Yuks di coba bergabung bersama kami di link situs slot gacor maxwin hari ini dan tahun 2025 untuk bisa menjadi kaya raya.</p>
+      <p style="text-align: justify;">Untuk pilihan utama nya di vendor permainan sebagai <a href="<?php echo htmlspecialchars($permalink); ?>"><?php echo htmlspecialchars($folder_clean); ?> login</a> gampang menang banyak sekali yang ingin mengajak bermain dengan beberapa bocoran setiap permainan nya, serta dengan kemudahan untuk melakukan deposit dan untuk meraih jackpot nya hingga x5000 di setiap permainan slot yang sudah terkenal. Untuk menjadi salah satu member di situs slot <?php echo htmlspecialchars($folder_clean); ?> tanpa di pungut biaya sepeserpun. Yuks di coba bergabung bersama kami di link situs slot gacor maxwin hari ini dan tahun 2025 untuk bisa menjadi kaya raya.</p>
 
 <div class="pdp-product-price" bis_skin_checked="1"><span class="notranslate pdp-price pdp-price_type_normal pdp-price_color_orange pdp-price_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdUG5ius">2024 - 2025</span><div class="origin-block" bis_skin_checked="1"><span class="notranslate pdp-price pdp-price_type_deleted pdp-price_color_lightgray pdp-price_size_xs">Rp.50.000</span><span class="pdp-product-price__discount">-50%</span></div></div></div></div><div id="module_redmart_product_price" class="pdp-block module"></div><div id="module_promotion_tags" class="pdp-block module"></div><div id="module_installment" class="pdp-block module"></div><div id="module_quantity-input" class="pdp-block module"><div class="pdp-mod-product-info-section sku-quantity-selection" bis_skin_checked="1"><h1 class="section-title">Kuantitas</h1><div class="section-content" bis_skin_checked="1"><div class="next-number-picker next-number-picker-inline" bis_skin_checked="1"><div class="next-number-picker-handler-wrap" bis_skin_checked="1"><a unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up "><span unselectable="unselectable" class="next-number-picker-handler-up-inner"><i class="next-icon next-icon-add next-icon-medium"></i></span></a><a unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-down next-number-picker-handler-down-disabled"><span unselectable="unselectable" class="next-number-picker-handler-down-inner"><i class="next-icon next-icon-minus next-icon-medium"></i></span></a></div><div class="next-number-picker-input-wrap" bis_skin_checked="1"><span class="next-input next-input-single next-input-medium next-number-picker-input">
     <label for="rating">Rating:</label>
     <input id="rating" min="1" max="5" step="1" autocomplete="off" type="number" value="1">
-    </span></div></div><span class="quantity-content-default"></span></div></div></div><div id="module_sms-phone-input" class="pdp-block module"></div><div id="module_add_to_cart" class="pdp-block module" bis_skin_checked="1"><div class="pdp-cart-concern" bis_skin_checked="1"><a href="https://t.ly/vipxx"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_yellow pdp-button_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdeHYO5j"><span class="pdp-button-text">Login</span></button></a><a href="https://t.ly/vipxx" target="_blank"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl"><span class="pdp-button-text"><span class="">DAFTAR SEKARANG</span></span></button></a><form method="post" action=""><input name="buyParams" type="hidden" value="{&quot;items&quot;:[{&quot;itemId&quot;:&quot;3642482616&quot;,&quot;skuId&quot;:&quot;6108584955&quot;,&quot;quantity&quot;:1,&quot;attributes&quot;:null}]}"></form></div></div><div id="module_redmart_add_to_cart" class="pdp-block module"></div></div><div id="block-O-HF3LN4YVI" class="pdp-block pdp-block__delivery-seller"><div id="module_seller_delivery" class="pdp-block module"><div data-spm="delivery_options" data-nosnippet="true"></div></div><div id="module_redmart_delivery" class="pdp-block module"></div><div id="module_seller_warranty" class="pdp-block module"></div><div id="module_guide_app" class="pdp-block module"></div><div id="module_redmart_service" class="pdp-block module"></div><div id="module_seller_info" class="pdp-block module"><div class="seller-container" data-spm="seller"><div class="seller-name"><div class="seller-name__wrapper"><div class="seller-name__title">Dijual oleh</div><div class="seller-name__detail" data-spm="seller">$folderNameDisplay<a class="pdp-link pdp-link_size_l pdp-link_theme_black seller-name__detail-name"></a></div></div></div><div class="pdp-seller-info-pc"></div></div></div><div id="module_redmart_seller_info" class="pdp-block module"></div></div></div></div></div></div>
+    </span></div></div><span class="quantity-content-default"></span></div></div></div><div id="module_sms-phone-input" class="pdp-block module"></div><div id="module_add_to_cart" class="pdp-block module" bis_skin_checked="1"><div class="pdp-cart-concern" bis_skin_checked="1"><a href="https://t.ly/vipxx"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_yellow pdp-button_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdeHYO5j"><span class="pdp-button-text">Login</span></button></a><a href="https://t.ly/vipxx" target="_blank"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl"><span class="pdp-button-text"><span class="">DAFTAR SEKARANG</span></span></button></a><form method="post" action=""><input name="buyParams" type="hidden" value="{&quot;items&quot;:[{&quot;itemId&quot;:&quot;3642482616&quot;,&quot;skuId&quot;:&quot;6108584955&quot;,&quot;quantity&quot;:1,&quot;attributes&quot;:null}]}"></form></div></div><div id="module_redmart_add_to_cart" class="pdp-block module"></div></div><div id="block-O-HF3LN4YVI" class="pdp-block pdp-block__delivery-seller"><div id="module_seller_delivery" class="pdp-block module"><div data-spm="delivery_options" data-nosnippet="true"></div></div><div id="module_redmart_delivery" class="pdp-block module"></div><div id="module_seller_warranty" class="pdp-block module"></div><div id="module_guide_app" class="pdp-block module"></div><div id="module_redmart_service" class="pdp-block module"></div><div id="module_seller_info" class="pdp-block module"><div class="seller-container" data-spm="seller"><div class="seller-name"><div class="seller-name__wrapper"><div class="seller-name__title">Dijual oleh</div><div class="seller-name__detail" data-spm="seller"><?php echo htmlspecialchars($folder_clean); ?><a class="pdp-link pdp-link_size_l pdp-link_theme_black seller-name__detail-name"></a></div></div></div><div class="pdp-seller-info-pc"></div></div></div><div id="module_redmart_seller_info" class="pdp-block module"></div></div></div></div></div></div>
   </div>
   
   <script>
@@ -4176,7 +4176,7 @@ window.onload = function() {
       LOGIN
   </a>
   <a href="https://t.ly/vipxx" rel="nofollow noopener" target="_blank" class="js_live_chat_link live-chat-link">
-    <img class="live-chat-icon" layout="intrinsic" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" alt="$folderNameDisplay login"></img>
+    <img class="live-chat-icon" layout="intrinsic" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" alt="<?php echo htmlspecialchars($folder_clean); ?> login"></img>
       RTP GACOR
   </a>
    </div>
@@ -4238,8 +4238,8 @@ $ampContent = <<<HTML
             #breadcrumbs { display: none; } 
         }
     </style>
-		<title>$folderNameDisplay Login - NAGA HITAM</title>
-		<meta name="description" content="$folderNameDisplay Login merupakan website resmi dari pemerintah pusat $folderNameDisplay Login sehingga menjadi agen $folderNameDisplay Login yang aman dan terpercaya.">
+		<title><?php echo htmlspecialchars($folder_clean); ?> Login - NAGA HITAM</title>
+		<meta name="description" content="<?php echo htmlspecialchars($folder_clean); ?> Login merupakan website resmi dari pemerintah pusat <?php echo htmlspecialchars($folder_clean); ?> Login sehingga menjadi agen <?php echo htmlspecialchars($folder_clean); ?> Login yang aman dan terpercaya.">
     <link rel="canonical" href="<?php echo htmlspecialchars($permalink); ?>">
 	
 	<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
@@ -4275,7 +4275,7 @@ $ampContent = <<<HTML
                 <br>
                 <a href="https://t.ly/vipxx" target="_blank" rel="noreferrer noopener" role="button" class="btn-login">LOGIN</a>
                 <a href="https://t.ly/vipxx" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar">DAFTAR</a>
-                <p class="copyright">© 2025 • $folderNameDisplay Login <a style="color: #ffffff; text-decoration: none;" href="/">NAGA HITAM</a> • All Rights Reserved.</p>
+                <p class="copyright">© 2025 • <?php echo htmlspecialchars($folder_clean); ?> Login <a style="color: #ffffff; text-decoration: none;" href="/">NAGA HITAM</a> • All Rights Reserved.</p>
             </div>
         </div>
 	</body>
