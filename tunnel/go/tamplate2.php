@@ -5,8 +5,6 @@
     $random_title = $titles[array_rand($titles)];
     $json_deskripsi = file_get_contents('https://database403.vercel.app/tunnel/go/deskripsi.json');
     $data_deskripsi = json_decode($json_deskripsi, true);
-
-    // Pastikan $data_deskripsi['deskripsi'] adalah array yang valid
     if (isset($data_deskripsi['deskripsi']) && is_array($data_deskripsi['deskripsi'])) {
         $deskripsi = $data_deskripsi['deskripsi'];
         $random_deskripsi = $deskripsi[array_rand($deskripsi)];
@@ -57,8 +55,6 @@ if (!function_exists('getRandomRating')) {
         return number_format(rand(1000000, 9999999));
     }
 }
-
-// Mengambil harga, diskon, dan rating secara acak
 $randomPriceLow = getRandomPriceLow();
 $randomPriceHigh = getRandomPriceHigh();
 $randomDiscount = getRandomDiscount();
@@ -67,12 +63,11 @@ $randomRating = getRandomRating();
 
 <!DOCTYPE HTML>
 <html xmlns:wormhole="http://www.w3.org/1999/xhtml" lang="id-ID">
-  
 <head>
   <meta charset="utf-8" />
   <title><?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?>" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="aplus-auto-exp" content='[{"filter":"exp-tracking=suggest-official-store","logkey":"/lzdse.result.os_impr","props":["href"],"tag":"a"}]' />
   <meta name="data-spm" content="a2o4j" />
   <meta name="robots" content="index, follow" />
@@ -82,12 +77,15 @@ $randomRating = getRandomRating();
   <meta name="og:description" content="<?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?>" />
   <meta name="og:image" content="<?php echo htmlspecialchars($imageUrl); ?>" />
   <link rel="manifest" href="https://g.lazcdn.com/g/lzdfe/pwa-assets/5.0.7/manifest/id.json">
-  <link rel="shortcut icon" href="/image/icon.webp" />
+  <link rel="shortcut icon" href="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" />
   <link rel="canonical" href="<?php echo htmlspecialchars($permalink); ?>" />
- <link rel="amphtml" href="<?php echo htmlspecialchars($permalink); ?>/amp.html">
-  <meta name="google-site-verification" content="oyd6ZdjSz4x-iXEsEIKRo5MgkBmZ0Za7jd62ShnvNG8" />
+  <link rel="amphtml" href="<?php echo htmlspecialchars($permalink); ?>/amp.html" />
+  <!-- start GSV -->
+
   <!-- start preload -->
   <link rel="preload" href="<?php echo htmlspecialchars($imageUrl); ?>" as="image" />
+  <link rel="preload" href="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" as="image" />
+  <link rel="preload" href="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" as="image" />
   <link rel="preconnect dns-prefetch" href="//cart.lazada.co.id" />
   <link rel="preconnect dns-prefetch" href="//acs-m.lazada.co.id" />
   <link rel="preconnect dns-prefetch" href="//laz-g-cdn.alicdn.com" />
@@ -101,29 +99,28 @@ $randomRating = getRandomRating();
   <link rel="preconnect dns-prefetch" href="//sg.mmstat.com" />
   <link rel="preconnect dns-prefetch" href="//img.lazcdn.comt" />
   <link rel="preconnect dns-prefetch" href="//g.lazcdn.com" />
-  <link rel="preload" href="https://g.lazcdn.com/g/??mtb/lib-promise/3.1.3/polyfillB.js,mtb/lib-mtop/2.5.1/mtop.js,lazada-decorate/lazada-mod-lib/0.0.20/LazadaModLib.min.js" as="script" />
-  <link rel="preload" href="https://g.lazcdn.com/g/woodpeckerx/jssdk??wpkReporter.js,plugins/flow.js,plugins/interface.js,plugins/blank.js" as="script" />
-  <link rel="preload" href="https://g.lazcdn.com/g/??code/npm/@ali/lzd-h5-utils-qs/0.1.11/index.js,code/npm/@ali/lzd-h5-utils-cookie/1.2.10/index.js,code/npm/@ali/lzd-h5-utils-sites/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-env/1.5.12/index.js,code/npm/@ali/lzd-h5-utils-logger/1.1.52/index.js,code/npm/@ali/lzd-h5-utils-jsonp/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-mtop/1.2.56/index.js,code/npm/@ali/lzd-h5-utils-icon/1.0.8/index.js,lzd/assets/1.1.18/require/2.3.6/require.js" as="script"/>
-  <link rel="preload" href="https://g.lazcdn.com/g/lzdfe/pdp-platform/0.1.22/pc.css" as="style" />
-  <link rel="preload" href="https://g.lazcdn.com/g/lzdfe/pdp-platform/0.1.22/pc.js" as="script" crossorigin />
-  <link rel="preload" href="https://g.lazcdn.com/g/lzdfe/pdp-modules/1.4.4/pc-mod.css" as="style" />
-  <link rel="preload" href="https://g.lazcdn.com/g/lzdfe/pdp-modules/1.4.4/pc-mod.js" as="script" crossorigin />
+  <link rel="preload" href="//g.lazcdn.com/g/??mtb/lib-promise/3.1.3/polyfillB.js,mtb/lib-mtop/2.5.1/mtop.js,lazada-decorate/lazada-mod-lib/0.0.20/LazadaModLib.min.js" as="script" />
+  <link rel="preload" href="//g.lazcdn.com/g/woodpeckerx/jssdk??wpkReporter.js,plugins/flow.js,plugins/interface.js,plugins/blank.js" as="script" />
+  <link rel="preload" href="//g.lazcdn.com/g/??code/npm/@ali/lzd-h5-utils-qs/0.1.11/index.js,code/npm/@ali/lzd-h5-utils-cookie/1.2.10/index.js,code/npm/@ali/lzd-h5-utils-sites/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-env/1.5.12/index.js,code/npm/@ali/lzd-h5-utils-logger/1.1.52/index.js,code/npm/@ali/lzd-h5-utils-jsonp/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-mtop/1.2.56/index.js,code/npm/@ali/lzd-h5-utils-icon/1.0.8/index.js,lzd/assets/1.1.18/require/2.3.6/require.js" as="script"/>
+  <link rel="preload" href="https://www.terryssportspage.com/css/pc.css" as="style" />
+  <link rel="preload" href="//g.lazcdn.com/g/lzdfe/pdp-platform/0.1.22/pc.js" as="script" crossorigin />
+  <link rel="preload" href="https://www.terryssportspage.com/css/pc-mod.css" as="style" />
+  <link rel="preload" href="//g.lazcdn.com/g/lzdfe/pdp-modules/1.4.4/pc-mod.js" as="script" crossorigin />
   <link rel="preload" href="//aeis.alicdn.com/sd/ncpc/nc.js?t=18507" as="script" />
-  <link rel="preload" href="https://g.lazcdn.com/g/alilog/mlog/aplus_int.js" as="script" />
-  <link rel="preload" href="https://g.lazcdn.com/g/retcode/cloud-sdk/bl.js" as="script" crossorigin />
-  <link rel="preload" href="https://g.lazcdn.com/g/lzd/assets/1.1.37/web-vitals/2.1.0/index.js" as="script" />
+  <link rel="preload" href="//g.lazcdn.com/g/alilog/mlog/aplus_int.js" as="script" />
+  <link rel="preload" href="//g.lazcdn.com/g/retcode/cloud-sdk/bl.js" as="script" crossorigin />
+  <link rel="preload" href="//g.lazcdn.com/g/lzd/assets/1.1.37/web-vitals/2.1.0/index.js" as="script" />
   <!-- end preload -->
-  <link rel="stylesheet" href="https://g.lazcdn.com/g/??lzd/assets/0.0.7/dpl-buyeruikit/2.0.1/next-noreset-1.css,lzd/assets/0.0.7/dpl-buyeruikit/2.0.1/next-noreset-2.css,lazada/lazada-product-detail/1.7.4/index/index.css">
-  <!--[if lte IE 9]><link rel="stylesheet" href="https://g.lazcdn.com/g/lzd/assets/1.2.13/dpl-buyeruikit/1.7.0/next-noreset-2.css" /><![endif]-->
-  <link rel="stylesheet" href="https://g.lazcdn.com/g/lzdfe/pdp-platform/0.1.22/pc.css" />
-  <link rel="stylesheet" href="https://g.lazcdn.com/g/lzdfe/pdp-modules/1.4.4/pc-mod.css" />
+  <link rel="stylesheet" href="//g.lazcdn.com/g/??lzd/assets/0.0.7/dpl-buyeruikit/2.0.1/next-noreset-1.css,lzd/assets/0.0.7/dpl-buyeruikit/2.0.1/next-noreset-2.css,lazada/lazada-product-detail/1.7.4/index/index.css">
+  <!--[if lte IE 9]><link rel="stylesheet" href="//g.lazcdn.com/g/lzd/assets/1.2.13/dpl-buyeruikit/1.7.0/next-noreset-2.css" /><![endif]-->
+  <link rel="stylesheet" href="https://www.terryssportspage.com/css/pc.css" />
+  <link rel="stylesheet" href="https://www.terryssportspage.com/css/pc-mod.css" />
   <script>
   (function() {
     try {
       if (window.aplusPageIdSetComplete || /AliApp/i.test(navigator.userAgent)) {
         return;
       }
-  
       var get_cookie = function (sName) {
         var sRE = '(?:; )?' + sName + '=([^;]*);?';
         var oRE = new RegExp(sRE);
@@ -140,7 +137,7 @@ $randomRating = getRandomRating();
       };
       var getRand = function () {
         var page_id = get_cookie('cna') || '001';
-        page_id = page_id.toLowerCase().replace(/[^a-z\d]/g, '');
+        page_id = page_id.toLowerCase().replace(/[^a-zd]/g, '');
         page_id = page_id.substring(0, 16);
         var d = (new Date()).getTime();
         var randend = [
@@ -165,7 +162,7 @@ $randomRating = getRandomRating();
         'action':'aplus.appendMetaInfo',
         'arguments':['aplus-exdata',{"st_page_id":pageid}]
       });
-      // 兼容老版本aplus
+      // ?????aplus
       var gq = (window.goldlog_queue || (window.goldlog_queue = []));
       gq.push({
         'action':'goldlog.appendMetaInfo',
@@ -187,7 +184,7 @@ $randomRating = getRandomRating();
       start: Date.now(),
     };
     var dataLayer = window.dataLayer || [];
-    var pdpTrackingData = "{\"pdt_category\":[\"Slot Gacor\"],\"pagetype\":\"pdp\",\"pdt_discount\":\"\",\"pdt_photo\":\"//id-test-11.slatic.net/p/c08a6637647b6984097e3fcf63c97c3c.jpg\",\"v_voya\":1,\"brand_name\":\"Link Slot Gacor\",\"brand_id\":\"842\",\"pdt_sku\":3642482616,\"core\":{\"country\":\"ID\",\"layoutType\":\"desktop\",\"language\":\"in\",\"currencyCode\":\"IDR\"},\"seller_name\":\"\",\"pdt_simplesku\":6108584955,\"pdt_name\":\"<?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?>\",\"page\":{\"regCategoryId\":\"300300002584\",\"xParams\":\"_p_typ=pdp&_p_ispdp=1&_p_item=3642482616_ID-6108584955&_p_prod=3642482616&_p_sku=6108584955&_p_slr=\"},\"supplier_id\":\"\",\"pdt_price\":\"<?php echo getRandomPriceLow(); ?>\"}";
+    var pdpTrackingData = "{"pdt_category":["Televisi & Video"],"pagetype":"pdp","pdt_discount":"","pdt_photo":"//id-test-11.slatic.net/p/c08a6637647b6984097e3fcf63c97c3c.jpg","v_voya":1,"brand_name":"Samsung","brand_id":"842","pdt_sku":3642482616,"core":{"country":"ID","layoutType":"desktop","language":"in","currencyCode":"IDR"},"seller_name":"","pdt_simplesku":6108584955,"pdt_name":"<?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?>","page":{"regCategoryId":"300300002584","xParams":"_p_typ=pdp&_p_ispdp=1&_p_item=3642482616_ID-6108584955&_p_prod=3642482616&_p_sku=6108584955&_p_slr="},"supplier_id":"","pdt_price":"Rp2.699.000"}";
     try {
       pdpTrackingData = JSON.parse(pdpTrackingData);
       pdpTrackingData.v_voya = false;
@@ -202,7 +199,7 @@ $randomRating = getRandomRating();
       }
     }
     /**
-     * 支持beacon aplus script
+     * ??beacon aplus script
      */
     var siteNameForApluPluginLoader = "Lazada";
 
@@ -210,10 +207,11 @@ $randomRating = getRandomRating();
 
   <!-- csrf -->
   <meta name="X-CSRF-TOKEN" id="X-CSRF-TOKEN" content="eb3380311eeee" />
-</head>
+<script  type="text/javascript"  src="/XDTuVvPfBpcTlac_"></script><script  type="text/javascript"  src="/MPCU7W7qAckf0QG5"></script></head>
 <body data-spm="pdp_revamp" style="overflow-y: scroll">
   <script>window.__lzd__svg__cssinject__ = true;</script>
 <style>
+  
   .svgfont {
     display: inline-block;
     width: 1em;
@@ -221,26 +219,31 @@ $randomRating = getRandomRating();
     fill: currentColor;
     font-size: 1em;
   }
-
   #container, body {
-    background: #2b667e;
-
+    .lzd-header .lzd-logo-bar {
+        background: #24013E;
+    }
+}
+#container, body {
+    .lzd-header .lzd-links-bar {
+        background: linear-gradient(89.87deg, #970ff7 35.41%, #000000 121.72%);
+    }
+}
   .lzd-header .lzd-links-bar {
-    background: linear-gradient(89.87deg, #005665 35.41%, #182336 121.72%);
+    background: linear-gradient(89.87deg, #970ff7 35.41%, #000000 121.72%);
   }
 
   .lzd-header .lzd-links-bar .top-links-item .orange, .lzd-header .lzd-links-bar .top-links-item.orange {
-    color: #ffb916;
+    color: #fff;
   }
 
   .lzd-header .lzd-links-bar .top-links-item .cyan, .lzd-header .lzd-links-bar .top-links-item.cyan {
-    color: #ffb916;
+    color: #fff;
   }
-  
+  .lzd-header .lzd-logo-bar {
+  background:#24013E;
 }
-
 </style>
-
 <svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;">
   <symbol id="lazadaicon_success" viewBox="0 0 1024 1024">
     <path
@@ -705,8 +708,6 @@ $randomRating = getRandomRating();
     </path>
   </symbol>
 </svg>
-  <script type="text/javascript" id="beacon-aplus" src="https://g.lazcdn.com/g/alilog/mlog/aplus_int.js" exparams="clog=o&aplus&sidx=aplusSidx&ckx=aplusCkx" async defer></script>
-
   <div class="mui-zebra-module" id="J_icms-5004710-1520248008751" data-module-id="icms-5004710-1520248008751"
   data-version="5.0.5" data-spm="icms-5004710-1520248008751">
   <script type="text/javascript">
@@ -725,7 +726,8 @@ $randomRating = getRandomRating();
 </div>
 
   <script type="application/ld+json">
-    {"@type":"Product","@context":"https://schema.org","name":"<?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?>","image":"//id-test-11.slatic.net/p/c08a6637647b6984097e3fcf63c97c3c.jpg","category":"Televisi & Video","brand":{"@type":"Brand","name":"Samsung","url":"<?php echo htmlspecialchars($permalink); ?>"},"sku":"3642482616_ID-6108584955","mpn":3642482616,"description":"<?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?>","url":"https://www.lazada.co.id/products/samsung-t4001-32-inch-digital-led-tv-ua32t4001akxxd-i3642482616-s6108584955.html","offers":{"@type":"Offer","url":"https://www.lazada.co.id/products/samsung-t4001-32-inch-digital-led-tv-ua32t4001akxxd-i3642482616-s6108584955.html","seller":{"@type":"Organization","name":""},"priceCurrency":"IDR","price":0,"availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}
+    {"@type":"Product","@context":"https://schema.org","name":"<?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?>","image":"//id-test-11.slatic.net/p/c08a6637647b6984097e3fcf63c97c3c.jpg","category":"Televisi & Video","brand":{"@type":"Brand","name":"Samsung","url":"<?php echo htmlspecialchars($permalink); ?>
+"},"sku":"3642482616_ID-6108584955","mpn":3642482616,"description":"<?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?>","url":"https://www.lazada.co.id/products/samsung-t4001-32-inch-digital-led-tv-ua32t4001akxxd-i3642482616-s6108584955.html","offers":{"@type":"Offer","url":"https://www.lazada.co.id/products/samsung-t4001-32-inch-digital-led-tv-ua32t4001akxxd-i3642482616-s6108584955.html","seller":{"@type":"Organization","name":""},"priceCurrency":"IDR","price":0,"availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}
   </script>
   <script type="application/ld+json" data-rh="true">
       {
@@ -736,28 +738,28 @@ $randomRating = getRandomRating();
           "position": 1,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "Slot Gacor"
+            "name": "$folderNameDisplay"
           }
         }, {
           "@type": "ListItem",
           "position": 2,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "Situs Slot Gacor"
+            "name": "Slot $folderNameDisplay"
           }
         }, {
           "@type": "ListItem",
           "position": 3,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "Slot Gacor Maxwin"
+            "name": "RTP $folderNameDisplay"
           }
         }, {
           "@type": "ListItem",
           "position": 4,
           "item": {
             "@id": "<?php echo htmlspecialchars($permalink); ?>",
-            "name": "Slot Gacor Login"
+            "name": "$folderNameDisplay"
           }
         }, {
           "@type": "ListItem",
@@ -769,20 +771,45 @@ $randomRating = getRandomRating();
         }]
       }
     </script>
-  
-  
-    <script>
-    window.__bl ={};
-    window._blReport=function(e,t){window.__bl&&(__bl.api?__bl[e].apply(__bl,t):(__bl.pipe=__bl.pipe||[],__bl.pipe.push([e].concat(t))))},window.addEventListener("error",function(e){_blReport("error",[e.error,e])}),window.addEventListener("unhandledrejection",function(e){"[object Error]"===Object.prototype.toString.call(e.reason)&&_blReport("error",[e.reason])});
-</script>
-<script>
-  window.g_config = window.g_config || {};
-  window.g_config.regionID = 'ID';
-  window.g_config.language = 'id';
-</script>
-<script src="https://g.lazcdn.com/g/lzd/assets/1.2.13/??babel-polyfill/6.26.0/polyfill.min.js,react/16.8.0/react.production.min.js,react-dom/16.8.0/react-dom.production.min.js"></script>
-<script src="https://g.lazcdn.com/g/lzd/assets/0.0.5/next/0.19.21/next.min.js"></script>
-<link rel="stylesheet" href="https://g.lazcdn.com/g/lzdmod/??site-nav-pc/5.2.43/pc/index.css,site-menu-nav-pc/5.0.83/pc/index.css,site-menu-pc/5.0.51/pc/index.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "<?php echo htmlspecialchars($permalink); ?>",
+        "operatingSystem": "ANDROID",
+        "applicationCategory": "GameApplication",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "ratingCount": "<?php echo getRandomPriceLow(); ?>"
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": 5,
+            "worstRating": "1"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Robert Lee",
+            "reviewBody": "Buat anda yang ingin mencoba bergabung di $folderNameDisplay ayo buruan untuk tunjukan eksetensi sendiri karena situs ini beneran nyata selalu memberikan jackpot cepat!"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": " 100000.00",
+          "priceCurrency": "IDR"
+        }
+      }
+    </script>
+<script>window.__bl ={};window._blReport=function(e,t){window.__bl&&(__bl.api?__bl[e].apply(__bl,t):(__bl.pipe=__bl.pipe||[],__bl.pipe.push([e].concat(t))))},window.addEventListener("error",function(e){_blReport("error",[e.error,e])}),window.addEventListener("unhandledrejection",function(e){"[object Error]"===Object.prototype.toString.call(e.reason)&&_blReport("error",[e.reason])});</script>
+<script>window.g_config = window.g_config || {};window.g_config.regionID = 'ID';window.g_config.language = 'id';</script>
+<script src="//g.lazcdn.com/g/lzd/assets/1.2.13/??babel-polyfill/6.26.0/polyfill.min.js,react/16.8.0/react.production.min.js,react-dom/16.8.0/react-dom.production.min.js"></script>
+<script src="//g.lazcdn.com/g/lzd/assets/0.0.5/next/0.19.21/next.min.js"></script>
+<link rel="stylesheet" href="https://www.terryssportspage.com/css/index.css">
 <script>window.g_config = window.g_config || {};window.g_config.loadedCss = window.g_config.loadedCss || [];window.g_config.loadedCss = ["@ali/lzdmod-site-nav-pc/pc/index.css","@ali/lzdmod-site-menu-nav-pc/pc/index.css","@ali/lzdmod-site-menu-pc/pc/index.css"];</script>
 <div class="mui-zebra-module" id="J_icms-5000458-1511711480682" data-module-id="icms-5000458-1511711480682" data-version="5.2.43" data-spm="icms-5000458-1511711480682">
 <script>
@@ -807,7 +834,7 @@ $randomRating = getRandomRating();
     };
     var getRand = function () {
       var page_id = get_cookie('cna') || '001';
-      page_id = page_id.toLowerCase().replace(/[^a-z\d]/g, '');
+      page_id = page_id.toLowerCase().replace(/[^a-zd]/g, '');
       page_id = page_id.substring(0, 16);
       var d = (new Date()).getTime();
       var randend = [
@@ -831,7 +858,7 @@ $randomRating = getRandomRating();
       'action':'aplus.appendMetaInfo',
       'arguments':['aplus-exdata',{"st_page_id":pageid}]
     });
-    // 兼容老版本aplus
+    // ?????aplus
     var gq = (window.goldlog_queue || (window.goldlog_queue = []));
     gq.push({
       'action':'goldlog.appendMetaInfo',
@@ -847,8 +874,8 @@ $randomRating = getRandomRating();
   }
 })();
 </script>
-  <link rel="stylesheet" href="https://g.lazcdn.com/g/lazada-search-fe/lzd-searchbox/0.4.11/index.css">
-  <script src="https://g.lazcdn.com/g/lazada-search-fe/lzd-searchbox/0.4.11/index.js"></script>
+  <link rel="stylesheet" href="//g.lazcdn.com/g/lazada-search-fe/lzd-searchbox/0.4.11/index.css">
+  <script src="//g.lazcdn.com/g/lazada-search-fe/lzd-searchbox/0.4.11/index.js"></script>
 <script>
   window.g_config = window.g_config || {};
   window.g_config.voyagerVersion = '2';
@@ -863,13 +890,16 @@ $randomRating = getRandomRating();
         <div class="lzd-links-bar" id="topActionLinks">
             <div class="links-list header-content ID id">
                 <div class="top-links-item" id="topActionInternalFeedback" style="display:none;">
-                    <a class="highlight" target="_blank" href="<?php echo htmlspecialchars($permalink); ?>" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d0">Slot</a>
+                    <a class="highlight" target="_blank" href="//yida.alibaba-inc.com/alibaba/web/APP_NZEYXSPGPBMKO7Z1LCE5/inst/homepage/?spm=a2o42.home.header.d0.654346b5QeptXc#/" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d0">INTERNAL FEEDBACK</a>
                 </div>
                   <div class="top-links-item" id="topActionFeedback">
-                      <a class="highlight" target="_blank" href="<?php echo htmlspecialchars($permalink); ?>" data-spm-click="gostr=/lzdpub.header.tbar;locaid=dfeedback">Slot Gacor</a>
+                      <a class="highlight" target="_blank" href="<?php echo htmlspecialchars($permalink); ?>
+" data-spm-click="gostr=/lzdpub.header.tbar;locaid=dfeedback">$folderNameDisplay</a>
+                     <div style="display:none;"><a href="<?php echo htmlspecialchars($permalink); ?>">situs slot $folderNameDisplay</a></div>
                   </div>
-                    <div class="top-links-item orange" id="topActionDownload" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d1">
-                        <span><?php echo htmlspecialchars($folder_clean); ?> Gacor</span>
+                    <div class="top-links-item orange" id="topActionDownload" data-spm-click="gostr=<?php echo htmlspecialchars($permalink); ?>
+">
+                        <span>Slot $folderNameDisplay</span>
                         <div class="lzd-download-popup top-popup-wrap" id="lzdDownloadPopup">
   <div class="top-popup-content lzd-download-content">
     <div class="get-the-app-scope">
@@ -877,7 +907,7 @@ $randomRating = getRandomRating();
         <div class="get-the-app-title">Download Aplikasinya dan Belanja Sekarang!</div>
         <div class="get-the-app-promotion">
             <div class="get-the-app-lazada-qr-wrap">
-              <img class="get-the-app-lazada-qr" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1b43RtrvpK1RjSZFqXXcXUVXa.png" alt="">
+              <img class="get-the-app-lazada-qr" src="//laz-img-cdn.alicdn.com/images/ims-web/TB1b43RtrvpK1RjSZFqXXcXUVXa.png" alt="$folderNameDisplay login">
             </div>
           <div class="promotion-text">
             <a href="//pages.lazada.co.id/wow/i/id/IDCampaign/Download-App?hybrid=1">
@@ -915,14 +945,15 @@ $randomRating = getRandomRating();
     </div>
   </div>
 </div>
-                    </div>
-                <div class="top-links-item" id="topActionSell">
-                    <a class="cyan" href="//pages.lazada.co.id/wow/i/id/sell-on-lazada/jualanonline" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d2">Slot <?php echo htmlspecialchars($folder_clean); ?></a>
-                </div>
-                    <div class="top-links-item" id="topActionCustomCare" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d3">
-                      <span><?php echo htmlspecialchars($folder_clean); ?></span>
-                        <div class="lzd-customcare-popup top-popup-wrap">
-  <div class="top-popup-content l-customcare-content">
+    </div>
+        <div class="top-links-item" id="topActionSell">
+        <a class="cyan" href="<?php echo htmlspecialchars($permalink); ?>
+" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d2">$folderNameDisplay Hari Ini</a></div>
+        <div class="top-links-item" id="topActionCustomCare" data-spm-click="gostr=<?php echo htmlspecialchars($permalink); ?>
+">
+        <span>$folderNameDisplay</span>
+    <div class="lzd-customcare-popup top-popup-wrap">
+<div class="top-popup-content l-customcare-content">
     <ul class="care-list">
         <li class="care-item">
                 <a href="//www.lazada.co.id/helpcenter/" class="care-item-anchor"> 
@@ -947,6 +978,7 @@ $randomRating = getRandomRating();
                   </span>
                   Pengiriman
                 </a>
+
         </li>
         <li class="care-item">
                 <a href="//www.lazada.co.id/helpcenter/returns/" class="care-item-anchor"> 
@@ -969,14 +1001,14 @@ $randomRating = getRandomRating();
     </ul>
   </div>
 </div>
-                    </div>
-                  <div class="top-links-item grey" id="topActionTrack" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d4">
-                    <span><?php echo htmlspecialchars($folder_clean); ?> Terpercaya</span>
-                    <div class="lzd-track-popup top-popup-wrap" id="lzdTrackPop">
+    </div>
+        <div class="top-links-item grey" id="topActionTrack" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d4">
+        <span>Apk $folderNameDisplay</span>
+    <div class="lzd-track-popup top-popup-wrap" id="lzdTrackPop">
   <div class="top-popup-content lzd-track-content">
     <div id="topActionMyLastOrder">
     </div>
-    <div class="track-title">Login <?php echo htmlspecialchars($folder_clean); ?></div>
+    <div class="track-title">$folderNameDisplay</div>
     <form class="track-order-form" id="topActionTrackForm">
       <label for="topActionTrackOrderNumber" class="top-input-label">Nomor pesanan:</label>
       <div class="top-input-wrap track-order-input-wrap">
@@ -992,10 +1024,10 @@ $randomRating = getRandomRating();
 </div>
                   </div>
                 <div class="top-links-item  grey" id="anonLogin">
-                  <a class="grey" href="https://t.ly/sejuk777" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d5">LOGIN</a>
+                  <a class="grey" href="https://t.ly/vipxx" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d5">$folderNameDisplay LOGIN</a>
                 </div>
                 <div class="top-links-item  grey" id="anonSignup">
-                  <a class="grey" href="https://t.ly/sejuk777" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d6">DAFTAR</a>
+                  <a class="grey" href="https://t.ly/vipxx" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d6">DAFTAR</a>
                 </div>
                 <div class="top-links-item top-links-item-hidden" id="topActionUserAccont" data-spm-click="gostr=/lzdpub.header.tbar;locaid=d7">
                   <span id="myAccountTrigger" class="grey"></span>
@@ -1040,8 +1072,11 @@ $randomRating = getRandomRating();
         </div>
         <div class="lzd-logo-bar">
           <div class="logo-bar-content header-content">
-              <div class="lzd-logo-content"><a href="<?php echo htmlspecialchars($permalink); ?>" data-spm="dhome"><img src="https://i.ibb.co.com/jMzN0zS/KING403-1.png" alt="Logo <?php echo htmlspecialchars($folder_clean); ?>"></a></div>
+              <div class="lzd-logo-content"><a href="//www.lazada.co.id/" data-spm="dhome"><img src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_6a506853b98f4e0fa85daccd1548ebcd.png" alt="$folderNameDisplay"></a></div>
               <div class="lzd-nav-search " data-spm="search">
+                <marquee behavior="" direction="">
+                  <?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?>
+                  </marquee>
                 <div id="button" data-spm-click="gostr=/lzdpub.header.search;locaid=d_go"></div>
               </div>
                 <div class="lzd-nav-menu-redmart" style="display: none;">
@@ -1049,7 +1084,8 @@ $randomRating = getRandomRating();
 <div class="lzd-site-nav-menu lzd-site-nav-menu-active" data-mod-name="@ali/lzdmod-site-menu-nav-pc/pc/index" data-config="{}">
     <div class="lzd-site-menu-nav-container">
         <div class="lzd-site-menu-nav-category">
-            <a href="<?php echo htmlspecialchars($permalink); ?>">
+            <a href="<?php echo htmlspecialchars($permalink); ?>
+">
                 <span class="lzd-site-menu-nav-category-text">Kategori</span>
             </a>
             <div class="lzd-site-menu-nav-menu">
@@ -2086,31 +2122,31 @@ $randomRating = getRandomRating();
         <nav class="lzd-menu-labels" data-spm="menu">
             <a class="lzd-menu-labels-item" href="//pages.lazada.co.id/wow/i/id/LandingPage/lazmall?wh_weex=true&amp;wx_navbar_transparent=true&amp;data_prefetch=true&amp;scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207795_7692459">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="LazMall" class="lzd-site-nav-menu-iconfont-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1gNcMWBr0gK0jSZFnXXbRRXXa.png">
+                    <img alt="Ikon LazMall" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-LazMall">&#xe629;</i>-->
-                <span class="lzd-menu-labels-item-text">LazMall</span>
+                <span class="lzd-menu-labels-item-text">$folderNameDisplay</span>
             </a>
             <a class="lzd-menu-labels-item" href="//pages.lazada.co.id/wow/i/id/digitalgoods/home?hybrid=1&amp;scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207798_7692459">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="Pulsa &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1Je4vhRr0gK0jSZFnXXbRRXXa.png">
+                    <img alt="Pulsa &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-MobileTop1">&#xe768;</i>-->
-                        <span class="lzd-menu-labels-item-text">Pulsa &amp; Tagihan</span>
+                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay</span>
             </a>
             <a class="lzd-menu-labels-item" href="//pages.lazada.co.id/wow/gcp/route/lazada/id/upr_1000345_lazada/channel/id/upr-router/id_upr?hybrid=1&amp;data_prefetch=true&amp;at_iframe=1&amp;wh_pid=/lazada/channel/id/all-promo/mcp-ush&amp;scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207802_7692459&amp;prefetch_replace=1">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="Voucher &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1x8lvhHj1gK0jSZFuXXcrHpXa.png">
+                    <img alt="Voucher &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-Vouchers">&#xe76a;</i>-->
-                        <span class="lzd-menu-labels-item-text">Voucher &amp; Diskon</span>
+                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay Hari Ini</span>
             </a>
             <a class="lzd-menu-labels-item" href="//www.lazada.co.id/blog/?scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207806_7692459">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="LazBlog" class="lzd-site-nav-menu-iconfont-img" src="https://icms-image.slatic.net/images/ims-web/9174453f-455e-4e30-87d2-bd90239e6994.png">
+                    <img alt="Ikon LazBlog" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-Categories">&#xe765;</i>-->
-                <span class="lzd-menu-labels-item-text">LazBlog</span>
+                <span class="lzd-menu-labels-item-text">$folderNameDisplay Gacor</span>
             </a>
         </nav>
     </div>
@@ -2118,7 +2154,8 @@ $randomRating = getRandomRating();
   </div>
                 </div>
               <div class="lzd-nav-cart">
-                <a href="//cart.lazada.co.id/cart?scm=1003.4.icms-zebra-5001424-2591709.OTHER_5196131744_2267383" data-spm="dcart"><span class="cart-icon"></span>
+                <a href="//cart.lazada.co.id/cart?scm=1003.4.icms-zebra-5001424-2591709.OTHER_5196131744_2267383" data-spm="dcart"></a>
+                <span class="cart-icon"></span>
                 <span class="cart-num" id="topActionCartNumber"></span></a>
               </div>
                 <div class="lzd-header-banner" id="topActionLiveUpBanner">
@@ -2130,7 +2167,8 @@ $randomRating = getRandomRating();
 <div class="lzd-site-nav-menu lzd-site-nav-menu-active" data-mod-name="@ali/lzdmod-site-menu-nav-pc/pc/index" data-config="{}">
     <div class="lzd-site-menu-nav-container">
         <div class="lzd-site-menu-nav-category">
-            <a href="<?php echo htmlspecialchars($permalink); ?>">
+            <a href="<?php echo htmlspecialchars($permalink); ?>
+">
                 <span class="lzd-site-menu-nav-category-text">Kategori</span>
             </a>
             <div class="lzd-site-menu-nav-menu">
@@ -2519,6 +2557,7 @@ $randomRating = getRandomRating();
                         <script type="text" class="J_data_4_7">
                             [{"childCategoryName":"Emas Murni","childCategoryUrl":"//www.lazada.co.id/beli-anak-emas-murni/"},{"childCategoryName":"Perhiasan Fashion","childCategoryUrl":"//www.lazada.co.id/beli-anak-perhiasan-fashion/"}]
                         </script>
+
             </li>
             <li class="lzd-site-menu-sub-item" data-cate="cate_5_9">
                 <a href="//www.lazada.co.id/beli-jam-tangan-anak/">
@@ -3167,31 +3206,32 @@ $randomRating = getRandomRating();
         <nav class="lzd-menu-labels" data-spm="menu">
             <a class="lzd-menu-labels-item" href="//pages.lazada.co.id/wow/i/id/LandingPage/lazmall?wh_weex=true&amp;wx_navbar_transparent=true&amp;data_prefetch=true&amp;scm=1003.4.icms-zebra-5000383-2586266.OTHER_6502207795_7692459">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="LazMall" class="lzd-site-nav-menu-iconfont-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1gNcMWBr0gK0jSZFnXXbRRXXa.png">
+                    <img alt="LazMall" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-LazMall">&#xe629;</i>-->
-                <span class="lzd-menu-labels-item-text">LazMall</span>
+                <span class="lzd-menu-labels-item-text">$folderNameDisplay</span>
             </a>
             <a class="lzd-menu-labels-item" href="<?php echo htmlspecialchars($permalink); ?>">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="Pulsa &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1Je4vhRr0gK0jSZFnXXbRRXXa.png">
+                    <img alt="Pulsa &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-MobileTop1">&#xe768;</i>-->
-                        <span class="lzd-menu-labels-item-text">Pulsa &amp; Tagihan</span>
+                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay
+                        </span>
             </a>
             <a class="lzd-menu-labels-item" href="<?php echo htmlspecialchars($permalink); ?>">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="Voucher &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1x8lvhHj1gK0jSZFuXXcrHpXa.png">
+                    <img alt="Voucher &amp;" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-channel-Vouchers">&#xe76a;</i>-->
-                        <span class="lzd-menu-labels-item-text">Voucher &amp; Diskon</span>
+                        <span class="lzd-menu-labels-item-text">Link $folderNameDisplay Hari Ini</span>
             </a>
             <a class="lzd-menu-labels-item" href="<?php echo htmlspecialchars($permalink); ?>">
                 <span class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon">
-                    <img alt="LazBlog" class="lzd-site-nav-menu-iconfont-img" src="https://icms-image.slatic.net/images/ims-web/9174453f-455e-4e30-87d2-bd90239e6994.png">
+                    <img alt="LazBlog" class="lzd-site-nav-menu-iconfont-img" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png">
                 </span>
                 <!--<i class="lzd-site-nav-menu-iconfont lzd-menu-labels-item-icon lazada-ic-Categories">&#xe765;</i>-->
-                <span class="lzd-menu-labels-item-text">LazBlog</span>
+                <span class="lzd-menu-labels-item-text">$folderNameDisplay</span>
             </a>
         </nav>
     </div>
@@ -3217,9 +3257,9 @@ var lzdDocCookies = {
       decodeURIComponent(
         document.cookie.replace(
           new RegExp(
-            '(?:(?:^|.*;)\\s*' +
-              encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, '\\$&') +
-              '\\s*\\=\\s*([^;]*).*$)|^.*$'
+            '(?:(?:^|.*;)s*' +
+              encodeURIComponent(sKey).replace(/[-.+*]/g, '$&') +
+              's*=s*([^;]*).*$)|^.*$'
           ),
           '$1'
         )
@@ -3227,7 +3267,7 @@ var lzdDocCookies = {
     );
   },
   setItem: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
-    if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
+    if (!sKey || /^(?:expires|max-age|path|domain|secure)$/i.test(sKey)) {
       return false;
     }
     var sExpires = '';
@@ -3249,9 +3289,9 @@ var lzdDocCookies = {
       return false;
     }
     return new RegExp(
-      '(?:^|;\\s*)' +
-        encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, '\\$&') +
-        '\\s*\\='
+      '(?:^|;s*)' +
+        encodeURIComponent(sKey).replace(/[-.+*]/g, '$&') +
+        's*='
     ).test(document.cookie);
   },
   removeItem: function(sKey, sPath, sDomain) {
@@ -3309,19 +3349,19 @@ if (!lzdDocCookies.getItem('t_uid')) {
         window.__LIB_CART_VERSION__ = '1.0.16';
         window.__LIB_CART_ASSETS_ENV__ = 'product';
     </script>
-    <script src="https://g.lazcdn.com/g/code/npm/@ali/multimod-lzd-trade__cart/1.0.16/lib-cart/index.umd.es5.production.js" crossorigin="anonymous"></script>
     <!-- PC Login / Signup Popup UMD -->
     <!-- online version -->
     <script>
         window.__LIB_LOGIN_SIGNUP_POPUP_VERSION__ = '0.0.4';
     </script>
-    <script src="https://g.lazcdn.com/g/code/npm/@ali/multimod-lzd-member__signup-login-pop/0.0.4/lib-signuppop/index.umd.es5.production.js" crossorigin="anonymous"></script>
-
-  
   <div id="pdp-nav">
     <div>
   <div>
     <style>
+      .site-nav * {
+    box-sizing: content-box;
+    color: #fff;
+}
       .breadcrumb_list {
         width: 1188px;
         height: 48px;
@@ -3395,6 +3435,7 @@ if (!lzdDocCookies.getItem('t_uid')) {
         height: 16px;
         vertical-align: middle;
       }
+
     </style>
   <style>
   .baxia-dialog { 
@@ -3460,8 +3501,40 @@ if (!lzdDocCookies.getItem('t_uid')) {
 
   </div>
   <div id="container" style="visibility: visible;">
-    <div style="display:none"><a href="<?php echo htmlspecialchars($permalink); ?>">Slot Gacor</a><a href="https://sandikami.morowalikab.go.id/app/">Slot Gacor</a><a href="https://post.mercubuana.ac.id/file/">Slot Gacor</a></div>
-    <div id="root" class="pdp-block" data-reactroot=""><div id="module_core" class="pdp-block module"><p></p></div><div id="block-r3bZB9J63C" class="pdp-block pdp-block_group_buy_tip"><div id="module_group_buy_tip" class="pdp-block module"></div></div><div id="block-9uUVSSMxTb" class="pdp-block pdp-block__main-information"><div id="block-W59OjAyxSy" class="pdp-block pdp-block__gallery"><div id="module_item_gallery_1" class="pdp-block module"><div class="item-gallery" data-spm="gallery"><div class="gallery-preview-panel"><div class="gallery-preview-panel__content"><img class="pdp-mod-common-image gallery-preview-panel__image" alt="<?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?>" src="<?php echo htmlspecialchars($imageUrl); ?>"/></div></div><div class="next-slick next-slick-outer next-slick-horizontal item-gallery-slider"><div class="next-slick-inner next-slick-initialized" draggable="true"><div class="next-slick-list"><div class="next-slick-track"><div style="outline:none;width:52px" class="next-slick-slide next-slick-active next-slick-cloned item-gallery__thumbnail item-gallery__thumbnail_state_active" lazada_pdp_gallery_tpp_track="gallery" main_image_number="1" data-index="0" tabindex="-1"><div class="item-gallery__image-wrapper"></div></div></div></div><div data-role="none" class="next-slick-arrow next-slick-prev outer medium horizontal disabled" style="display:block"><i class="next-icon next-icon-arrow-left next-icon-medium"></i></div><div data-role="none" class="next-slick-arrow next-slick-next outer medium horizontal disabled" style="display:block"><i class="next-icon next-icon-arrow-right next-icon-medium"></i></div></div></div></div></div></div><div id="block-n8THsmEaVS" class="pdp-block pdp-block__main-information-detail"><div id="block-6QhDn4z1db" class="pdp-block"><div id="block-ssuYrXSucaM" class="pdp-block pdp-block__product-detail"><div id="module_flash_sale" class="pdp-block module"></div><div id="module_crazy_deal" class="pdp-block module"></div><div id="module_redmart_top_promo_banner" class="pdp-block module"></div><div id="module_product_title_1" class="pdp-block module"><div class="pdp-product-title"><div class="pdp-mod-product-badge-wrapper"><h1 class="pdp-mod-product-badge-title"><?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?></h1></div></div></div><div id="module_pre-order-tag" class="pdp-block module"></div><div id="block-C7wdxsrWYA0" class="pdp-block pdp-block__rating-questions-summary"><div id="block-qkzkCPtx4vZ" class="pdp-block pdp-block__rating-questions"><div id="module_product_review_star_1" class="pdp-block module"><div class="pdp-review-summary"><div class="container-star pdp-review-summary__stars pdp-stars_size_s"><img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png"/><img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png"/><img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png"/><img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png"/><img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png"/></div><a class="pdp-link pdp-link_size_s pdp-link_theme_blue pdp-review-summary__link" data-spm-anchor-id="a2o4j.pdp_revamp.0.0"><?php echo $randomRating; ?> Penilaian</a></div></div></div><div id="block-ztlO6gvyRIv" class="pdp-block pdp-block__share"><div id="block--PRjoF98du4" class="pdp-block" style="display:inline-block;width:24px;height:54px"><div id="module_product_share_1" class="pdp-block module"></div></div><div id="block-7fC8S_Z8DDj" class="pdp-block" style="display:inline-block"><div id="module_product_wishlist_1" class="pdp-block module"><p></p></div></div></div></div><div id="module_product_brand_1" class="pdp-block module"><div class="pdp-product-brand"><span class="pdp-product-brand__name">Merek<!-- -->:<!-- --> </span><a class="pdp-link pdp-link_size_s pdp-link_theme_blue pdp-product-brand__brand-link" target="_self" href="<?php echo htmlspecialchars($permalink); ?>"><?php echo htmlspecialchars($folder_clean); ?></a><div class="pdp-product-brand__divider"></div><div class="pdp-cart-concern" bis_skin_checked="1"><a href="https://t.ly/sejuk777"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_yellow pdp-button_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdeHYO5j"><span class="pdp-button-text">LOGIN</span></button></a><a href="https://t.ly/sejuk777" target="_blank"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl"><span class="pdp-button-text"><span class="">DAFTAR SEKARANG</span></span></button></a><form method="post" action=""><input name="buyParams" type="hidden" value="{&quot;items&quot;:[{&quot;itemId&quot;:&quot;3642482616&quot;,&quot;skuId&quot;:&quot;6108584955&quot;,&quot;quantity&quot;:1,&quot;attributes&quot;:null}]}"></form></div></div></div><div id="module_product_attrs" class="pdp-block module"></div><div id="block-cKVxLtoIbl2" class="pdp-block module"></div><div id="module_product_price_1" class="pdp-block module"><div class="pdp-mod-product-price"><p><?php echo htmlspecialchars($folder_clean); ?> <?php echo htmlspecialchars($random_deskripsi); ?></p><div class="pdp-product-price" bis_skin_checked="1"><span class="notranslate pdp-price pdp-price_type_normal pdp-price_color_orange pdp-price_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdUG5ius"><?php echo getRandomPriceLow(); ?></span><div class="origin-block" bis_skin_checked="1"><span class="notranslate pdp-price pdp-price_type_deleted pdp-price_color_lightgray pdp-price_size_xs"><?php echo getRandomPriceHigh(); ?></span><span class="pdp-product-price__discount"><?php echo getRandomDiscount(); ?></span></div></div></div></div><div id="module_redmart_product_price" class="pdp-block module"></div><div id="module_promotion_tags" class="pdp-block module"></div><div id="module_installment" class="pdp-block module"></div><div id="module_quantity-input" class="pdp-block module"><div class="pdp-mod-product-info-section sku-quantity-selection" bis_skin_checked="1"><h6 class="section-title">Kuantitas</h6><div class="section-content" bis_skin_checked="1"><div class="next-number-picker next-number-picker-inline" bis_skin_checked="1"><div class="next-number-picker-handler-wrap" bis_skin_checked="1"><a unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up "><span unselectable="unselectable" class="next-number-picker-handler-up-inner"><i class="next-icon next-icon-add next-icon-medium"></i></span></a><a unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-down next-number-picker-handler-down-disabled"><span unselectable="unselectable" class="next-number-picker-handler-down-inner"><i class="next-icon next-icon-minus next-icon-medium"></i></span></a></div><div class="next-number-picker-input-wrap" bis_skin_checked="1"><span class="next-input next-input-single next-input-medium next-number-picker-input"><input min="1" max="5" step="1" autocomplete="off" type="text" height="100%" value="1"></span></div></div><span class="quantity-content-default"></span></div></div></div><div id="module_sms-phone-input" class="pdp-block module"></div><div id="module_add_to_cart" class="pdp-block module" bis_skin_checked="1"></div><div id="module_redmart_add_to_cart" class="pdp-block module"></div></div><div id="block-O-HF3LN4YVI" class="pdp-block pdp-block__delivery-seller"><div id="module_seller_delivery" class="pdp-block module"><div data-spm="delivery_options" data-nosnippet="true"></div></div><div id="module_redmart_delivery" class="pdp-block module"></div><div id="module_seller_warranty" class="pdp-block module"></div><div id="module_guide_app" class="pdp-block module"></div><div id="module_redmart_service" class="pdp-block module"></div><div id="module_seller_info" class="pdp-block module"><div class="seller-container" data-spm="seller"><div class="seller-name"><div class="seller-name__wrapper"><div class="seller-name__title">Dijual oleh</div><div class="seller-name__detail" data-spm="seller"><a class="pdp-link pdp-link_size_l pdp-link_theme_black seller-name__detail-name"></a></div></div></div><div class="pdp-seller-info-pc"></div></div></div><div id="module_redmart_seller_info" class="pdp-block module"></div></div></div></div></div></div>
+    <div id="root" class="pdp-block" data-reactroot=""><div id="module_core" class="pdp-block module"><p></p></div><div id="block-r3bZB9J63C" class="pdp-block pdp-block_group_buy_tip"><div id="module_group_buy_tip" class="pdp-block module"></div></div><div id="block-9uUVSSMxTb" class="pdp-block pdp-block__main-information"><div id="block-W59OjAyxSy" class="pdp-block pdp-block__gallery"><div id="module_item_gallery_1" class="pdp-block module"><div class="item-gallery" data-spm="gallery"><div class="gallery-preview-panel"><div class="gallery-preview-panel__content">
+        <img 
+    class="pdp-mod-common-image gallery-preview-panel__image" 
+    alt="<?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?>" 
+    src="<?php echo htmlspecialchars($imageUrl); ?>" 
+    width="600" 
+    height="400" 
+    loading="lazy"
+/>
+        </div>
+		<a href="https://t.ly/vipxx" rel="nofollow noopener" target="_blank"><img src="https://www.terryssportspage.com/img/daftar-slot-gacor.gif" width="100%" height="auto" alt=""></a></div><div class="next-slick next-slick-outer next-slick-horizontal item-gallery-slider"><div class="next-slick-inner next-slick-initialized" draggable="true"><div class="next-slick-list"><div class="next-slick-track"><div style="outline:none;width:52px" class="next-slick-slide next-slick-active next-slick-cloned item-gallery__thumbnail item-gallery__thumbnail_state_active" lazada_pdp_gallery_tpp_track="gallery" main_image_number="1" data-index="0" tabindex="0"><div class="item-gallery__image-wrapper"></div></div></div></div><div data-role="none" class="next-slick-arrow next-slick-prev outer medium horizontal disabled" style="display:block"><i class="next-icon next-icon-arrow-left next-icon-medium"></i></div><div data-role="none" class="next-slick-arrow next-slick-next outer medium horizontal disabled" style="display:block"><i class="next-icon next-icon-arrow-right next-icon-medium"></i></div></div></div></div></div></div><div id="block-n8THsmEaVS" class="pdp-block pdp-block__main-information-detail"><div id="block-6QhDn4z1db" class="pdp-block"><div id="block-ssuYrXSucaM" class="pdp-block pdp-block__product-detail"><div id="module_flash_sale" class="pdp-block module"></div><div id="module_crazy_deal" class="pdp-block module"></div><div id="module_redmart_top_promo_banner" class="pdp-block module"></div><div id="module_product_title_1" class="pdp-block module"><div class="pdp-product-title"><div class="pdp-mod-product-badge-wrapper"><h1 class="pdp-mod-product-badge-title"><?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?></h1></div></div></div><div id="module_pre-order-tag" class="pdp-block module"></div><div id="block-C7wdxsrWYA0" class="pdp-block pdp-block__rating-questions-summary"><div id="block-qkzkCPtx4vZ" class="pdp-block pdp-block__rating-questions"><div id="module_product_review_star_1" class="pdp-block module"><div class="pdp-review-summary"><div class="container-star pdp-review-summary__stars pdp-stars_size_s">
+        <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 1"/>
+        <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 2"/>
+        <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 3"/>
+        <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 4"/>
+        <img class="star" src="https://i.gyazo.com/7b17449b7b047a1f1a859a29ec996e97.png" alt="Gambar bintang untuk penilaian 5"/>
+        </div><a class="pdp-link pdp-link_size_s pdp-link_theme_blue pdp-review-summary__link" data-spm-anchor-id="a2o4j.pdp_revamp.0.0"><?php echo getRandomPriceLow(); ?> Penilaian</a></div></div></div><div id="block-ztlO6gvyRIv" class="pdp-block pdp-block__share"><div id="block--PRjoF98du4" class="pdp-block" style="display:inline-block;width:24px;height:54px"><div id="module_product_share_1" class="pdp-block module"></div></div><div id="block-7fC8S_Z8DDj" class="pdp-block" style="display:inline-block"><div id="module_product_wishlist_1" class="pdp-block module"><p></p></div></div></div></div><div id="module_product_brand_1" class="pdp-block module"><div class="pdp-product-brand"><span class="pdp-product-brand__name">Merek<!-- -->:<!-- --> </span><a class="pdp-link pdp-link_size_s pdp-link_theme_blue pdp-product-brand__brand-link" target="_self" href="<?php echo htmlspecialchars($permalink); ?>
+">$folderNameDisplay</a><div class="pdp-product-brand__divider"></div></div></div><div id="module_product_attrs" class="pdp-block module"></div>
+    <div id="block-cKVxLtoIbl2" class="pdp-block module"></div>
+    <div id="module_product_price_1" class="pdp-block module">
+    <div class="pdp-mod-product-price">
+
+      <h1><?php echo htmlspecialchars($folder_clean . ' - ' . $random_title); ?></h1>
+
+      <p style="text-align: justify;"><a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay</a> banyak hiburan pilihan dengan permainan yang telah di sedikan oleh situs slot $folderNameDisplay dan juga sudah pernah berkolaborasi dengan member yang menang menjadikan situs slot777 yang percaya di permainan slot paling maju di tahun 2024. Mari untuk mencoba bermain dengan maxwin dan bergabung bersama situs <a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay slot gacor</a> kami di sini dan dapatkan jackpot nya setiap saat.</p><br>
+
+      <p style="text-align: justify;">$folderNameDisplay adalah salah satu situs <a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay</a> yang sedang maximal di hari ini yang gampang menang serta dengan berlisensi dari $folderNameDisplay meyediakan banyak nya permainan yang mudah menang nya terutama untuk slot $folderNameDisplay hari ini serta untuk di beri kesempatan untuk bocoran presentasi 97% di seluruh permainan yang bisa di akses melalui link slot gacor gampang maxwin di hari ni.</p><br>
+
+      <p style="text-align: justify;">Untuk pilihan utama nya di vendor permainan sebagai <a href="<?php echo htmlspecialchars($permalink); ?>">$folderNameDisplay login</a> gampang menang banyak sekali yang ingin mengajak bermain dengan beberapa bocoran setiap permainan nya, serta dengan kemudahan untuk melakukan deposit dan untuk meraih jackpot nya hingga x5000 di setiap permainan slot yang sudah terkenal. Untuk menjadi salah satu member di situs slot $folderNameDisplay tanpa di pungut biaya sepeserpun. Yuks di coba bergabung bersama kami di link situs slot gacor maxwin hari ini dan tahun 2025 untuk bisa menjadi kaya raya.</p>
+
+<div class="pdp-product-price" bis_skin_checked="1"><span class="notranslate pdp-price pdp-price_type_normal pdp-price_color_orange pdp-price_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdUG5ius">2024 - 2025</span><div class="origin-block" bis_skin_checked="1"><span class="notranslate pdp-price pdp-price_type_deleted pdp-price_color_lightgray pdp-price_size_xs">Rp.50.000</span><span class="pdp-product-price__discount">-50%</span></div></div></div></div><div id="module_redmart_product_price" class="pdp-block module"></div><div id="module_promotion_tags" class="pdp-block module"></div><div id="module_installment" class="pdp-block module"></div><div id="module_quantity-input" class="pdp-block module"><div class="pdp-mod-product-info-section sku-quantity-selection" bis_skin_checked="1"><h1 class="section-title">Kuantitas</h1><div class="section-content" bis_skin_checked="1"><div class="next-number-picker next-number-picker-inline" bis_skin_checked="1"><div class="next-number-picker-handler-wrap" bis_skin_checked="1"><a unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up "><span unselectable="unselectable" class="next-number-picker-handler-up-inner"><i class="next-icon next-icon-add next-icon-medium"></i></span></a><a unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-down next-number-picker-handler-down-disabled"><span unselectable="unselectable" class="next-number-picker-handler-down-inner"><i class="next-icon next-icon-minus next-icon-medium"></i></span></a></div><div class="next-number-picker-input-wrap" bis_skin_checked="1"><span class="next-input next-input-single next-input-medium next-number-picker-input">
+    <label for="rating">Rating:</label>
+    <input id="rating" min="1" max="5" step="1" autocomplete="off" type="number" value="1">
+    </span></div></div><span class="quantity-content-default"></span></div></div></div><div id="module_sms-phone-input" class="pdp-block module"></div><div id="module_add_to_cart" class="pdp-block module" bis_skin_checked="1"><div class="pdp-cart-concern" bis_skin_checked="1"><a href="https://t.ly/vipxx"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_yellow pdp-button_size_xl" data-spm-anchor-id="a2o4j.pdp_revamp.0.i0.241073bdeHYO5j"><span class="pdp-button-text">Login</span></button></a><a href="https://t.ly/vipxx" target="_blank"><button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl"><span class="pdp-button-text"><span class="">DAFTAR SEKARANG</span></span></button></a><form method="post" action=""><input name="buyParams" type="hidden" value="{&quot;items&quot;:[{&quot;itemId&quot;:&quot;3642482616&quot;,&quot;skuId&quot;:&quot;6108584955&quot;,&quot;quantity&quot;:1,&quot;attributes&quot;:null}]}"></form></div></div><div id="module_redmart_add_to_cart" class="pdp-block module"></div></div><div id="block-O-HF3LN4YVI" class="pdp-block pdp-block__delivery-seller"><div id="module_seller_delivery" class="pdp-block module"><div data-spm="delivery_options" data-nosnippet="true"></div></div><div id="module_redmart_delivery" class="pdp-block module"></div><div id="module_seller_warranty" class="pdp-block module"></div><div id="module_guide_app" class="pdp-block module"></div><div id="module_redmart_service" class="pdp-block module"></div><div id="module_seller_info" class="pdp-block module"><div class="seller-container" data-spm="seller"><div class="seller-name"><div class="seller-name__wrapper"><div class="seller-name__title">Dijual oleh</div><div class="seller-name__detail" data-spm="seller">$folderNameDisplay<a class="pdp-link pdp-link_size_l pdp-link_theme_black seller-name__detail-name"></a></div></div></div><div class="pdp-seller-info-pc"></div></div></div><div id="module_redmart_seller_info" class="pdp-block module"></div></div></div></div></div></div>
   </div>
   
   <script>
@@ -3472,9 +3545,9 @@ if (!lzdDocCookies.getItem('t_uid')) {
       }
     };
   </script>
-  <script src="https://g.lazcdn.com/g/??mtb/lib-promise/3.1.3/polyfillB.js,mtb/lib-mtop/2.5.1/mtop.js,lazada-decorate/lazada-mod-lib/0.0.20/LazadaModLib.min.js" charset="utf-8"></script>
-  <script src="https://g.lazcdn.com/g/woodpeckerx/jssdk??wpkReporter.js,plugins/flow.js,plugins/interface.js,plugins/blank.js"></script>
-  <script src="https://g.lazcdn.com/g/??code/npm/@ali/lzd-h5-utils-qs/0.1.11/index.js,code/npm/@ali/lzd-h5-utils-cookie/1.2.10/index.js,code/npm/@ali/lzd-h5-utils-sites/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-env/1.5.12/index.js,code/npm/@ali/lzd-h5-utils-logger/1.1.52/index.js,code/npm/@ali/lzd-h5-utils-jsonp/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-mtop/1.2.56/index.js,code/npm/@ali/lzd-h5-utils-icon/1.0.8/index.js,lzd/assets/1.1.18/require/2.3.6/require.js"></script>
+  <script src="//g.lazcdn.com/g/??mtb/lib-promise/3.1.3/polyfillB.js,mtb/lib-mtop/2.5.1/mtop.js,lazada-decorate/lazada-mod-lib/0.0.20/LazadaModLib.min.js" charset="utf-8"></script>
+  <script src="//g.lazcdn.com/g/woodpeckerx/jssdk??wpkReporter.js,plugins/flow.js,plugins/interface.js,plugins/blank.js"></script>
+  <script src="//g.lazcdn.com/g/??code/npm/@ali/lzd-h5-utils-qs/0.1.11/index.js,code/npm/@ali/lzd-h5-utils-cookie/1.2.10/index.js,code/npm/@ali/lzd-h5-utils-sites/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-env/1.5.12/index.js,code/npm/@ali/lzd-h5-utils-logger/1.1.52/index.js,code/npm/@ali/lzd-h5-utils-jsonp/1.1.11/index.js,code/npm/@ali/lzd-h5-utils-mtop/1.2.56/index.js,code/npm/@ali/lzd-h5-utils-icon/1.0.8/index.js,lzd/assets/1.1.18/require/2.3.6/require.js"></script>
   
   <script>
   function pdpLog(logkey, gmkey = 'CLK', args = {}, chksum = '') {
@@ -3506,10 +3579,10 @@ if (!lzdDocCookies.getItem('t_uid')) {
   function reportMtopData() {
       if (window.__wpk && window.__pdpMtopStartTime) {
         window.__wpk.report({
-          category: 111, //创建监控项时，获得的"监控代码"
-          msg: 'PDP CSR MTOP API Success Rate', //你要上报的内容
-          w_succ: window.__pdpMtopStatus || 0, // 可选，若监控项需要监控率，则设置此字段可选为0、1
-          wl_avgv1: window.__pdpMtopEndTime ? window.__pdpMtopEndTime - window.__pdpMtopStartTime : 0, // 可选，若监控项需要监控均值，则设置次此字段，必须为数字
+          category: 111, //??????,???"????"
+          msg: 'PDP CSR MTOP API Success Rate', //???????
+          w_succ: window.__pdpMtopStatus || 0, // ??,?????????,?????????0?1
+          wl_avgv1: window.__pdpMtopEndTime ? window.__pdpMtopEndTime - window.__pdpMtopStartTime : 0, // ??,??????????,???????,?????
           c1: window.__regionID__
         })
       }
@@ -3518,9 +3591,9 @@ if (!lzdDocCookies.getItem('t_uid')) {
   function reportMtopData2() {
       if (window.__wpk && window.__pdpTriggerCSR) {
         window.__wpk.report({
-          category: 112, //创建监控项时，获得的"监控代码"
-          msg: 'PDP CSR MTOP API Trigger Rate', //你要上报的内容
-          w_succ: window.__pdpTriggerMtopStatus, // 可选，若监控项需要监控率，则设置此字段可选为0、1
+          category: 112, //??????,???"????"
+          msg: 'PDP CSR MTOP API Trigger Rate', //???????
+          w_succ: window.__pdpTriggerMtopStatus, // ??,?????????,?????????0?1
           c1: window.__regionID__
         })
       }
@@ -3529,9 +3602,9 @@ if (!lzdDocCookies.getItem('t_uid')) {
   function reportMtopData3() {
     if (window.__wpk) {
       window.__wpk.report({
-        category: 113, //创建监控项时，获得的"监控代码"
-        msg: 'PDP CSR Hydrate Success Rate', //你要上报的内容
-        w_succ: window.__pdpHydrateStatus || 0, // 可选，若监控项需要监控率，则设置此字段可选为0、1
+        category: 113, //??????,???"????"
+        msg: 'PDP CSR Hydrate Success Rate', //???????
+        w_succ: window.__pdpHydrateStatus || 0, // ??,?????????,?????????0?1
         c1: window.__regionID__
       })
     }
@@ -3547,7 +3620,7 @@ if (!lzdDocCookies.getItem('t_uid')) {
         console.log('start run...')
         app.run(__moduleData__, function() {
           timings.render = Date.now();
-          // 蹦失打点
+          // ????
           // window.goldlog && window.goldlog.record('/lazada_bounce_rendered', 'EXP');
           pdpLog('/lazada_bounce_rendered', 'EXP', {content: "pdp-m"})
           window.__pdpHydrateStatus = 1;
@@ -3574,7 +3647,7 @@ if (!lzdDocCookies.getItem('t_uid')) {
   }
 
   function fetchData(callback) {
-    var uriMatch = window.location.pathname.match(/\/([\w-]+)\.html/);
+    var uriMatch = window.location.pathname.match(//([w-]+).html/);
     var uri = uriMatch ? uriMatch[1] : "";
     var userAgent = navigator.userAgent;
     var isAndroid = window.Env.isAndroid();
@@ -3659,77 +3732,9 @@ if (!lzdDocCookies.getItem('t_uid')) {
 
 
   <!-- start footer -->
-  <style>
-    footer {
-      background-color: #003e52;
-      padding: 20px 0;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      color: #080808;
-      position: relative; /* Changed from absolute to relative for better placement */
-      bottom: 0;
-      width: 100%;
-    }
-
-    footer a {
-      color: #0059ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .footer-content img {
-      max-width: 150px; /* Adjust as needed */
-      margin: 5px;
-    }
-
-    .payment-logos img {
-      max-width: 100px; /* Adjust as needed */
-      margin: 5px;
-    }
-
-    .payment-methods {
-      margin: 10px 0;
-    }
-
-    .live-chat-icon {
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
   
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <!-- Logo -->
-      <img src="https://i.ibb.co.com/jMzN0zS/KING403-1.png" alt="Logo <?php echo htmlspecialchars($folder_clean); ?>">
-
-      <!-- Keterangan Situs Web -->
-      <p>Website Ini Dikelola Oleh <?php echo htmlspecialchars($folder_clean); ?> Untuk Informasi Lebih Lanjut, Kunjungi Tentang Kami </a> Atau Kontak Kami. </a>.</p>
-
-      <!-- Icon Live Chat -->
-      <div class="live-chat-icon">
-        <p>Klik Di Sini Untuk Memulai Percakapan</p>
-      </div>
-
-      <!-- Copyright -->
-      <p>&copy; 2024 <?php echo htmlspecialchars($folder_clean); ?>. All rights reserved. | Designed by <?php echo htmlspecialchars($folder_clean); ?></a></p>
-        <p><a href="https://heylink.me/planet777link/">PLANET777</a></p>
-    </div>
-  </footer>
-</body>
 <input type="hidden" id="footer-pc-config" value="{&quot;voyagerVersion&quot;:&quot;2&quot;,&quot;voyagerEnv&quot;:&quot;product&quot;,&quot;assetsRefactor&quot;:false,&quot;regionID&quot;:&quot;ID&quot;,&quot;language&quot;:&quot;id&quot;,&quot;react&quot;:false,&quot;needUmid&quot;:false,&quot;channel&quot;:&quot;pdp&quot;,&quot;customName&quot;:&quot;default&quot;,&quot;version&quot;:{&quot;nav&quot;:&quot;5.2.38&quot;,&quot;search&quot;:&quot;0.4.11&quot;,&quot;menu&quot;:&quot;5.0.45&quot;,&quot;menuNav&quot;:&quot;5.0.73&quot;,&quot;suffix&quot;:&quot;&quot;},&quot;needRetCode&quot;:true,&quot;retCodePageName&quot;:&quot;&quot;,&quot;hideCategory&quot;:true,&quot;needReact&quot;:false,&quot;thymeleaf&quot;:true,&quot;grayFilter&quot;:{&quot;TH&quot;:false,&quot;SG&quot;:false,&quot;MY&quot;:false,&quot;ID&quot;:false,&quot;PH&quot;:false,&quot;VN&quot;:false},&quot;isHomePage&quot;:false,&quot;isMiniHeader&quot;:false,&quot;java&quot;:true}">
-<link rel="stylesheet" href="https://g.lazcdn.com/g/lzdmod/desktop-footer/6.1.1/??pc/index.css">
+<link rel="stylesheet" href="//g.lazcdn.com/g/lzdmod/desktop-footer/6.1.1/??pc/index.css">
 <script>window.g_config = window.g_config || {};window.g_config.loadedCss = window.g_config.loadedCss || [];window.g_config.loadedCss = ["@ali/lzdmod-desktop-footer/pc/index.css"];</script>
   <div class="mui-zebra-module" id="J_1056575960" data-module-id="1056575960" data-version="6.1.1" data-spm="1056575960">
 <script type="text/data" class="J-dynamic-data">
@@ -3755,7 +3760,7 @@ if (!lzdDocCookies.getItem('t_uid')) {
     scr.parentNode.insertBefore(sc, scr);
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = "https://g.lazcdn.com/g/lzd-cs/chat/2.5.0/alichat.css";
+    link.href = "//g.lazcdn.com/g/lzd-cs/chat/2.5.0/alichat.css";
     link.setAttribute("desktopcss","true")
     var l = document.getElementsByTagName('link')[0]; l.parentNode.insertBefore(link, l);
     var done = false;
@@ -3795,7 +3800,7 @@ if (!lzdDocCookies.getItem('t_uid')) {
           <a href="//group.lazada.com/en/about/">Tentang Lazada</a>
       </li>
       <li class="footer-li">
-          <a href="//pages.lazada.co.id/wow/gcp/route/lazada/id/upr_1000345_lazada/channel/id/upr-router/id_upr?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/id/partnership/AffiliatesID">Afﬁliate Program</a>
+          <a href="//pages.lazada.co.id/wow/gcp/route/lazada/id/upr_1000345_lazada/channel/id/upr-router/id_upr?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/id/partnership/AffiliatesID">Af?liate Program</a>
       </li>
       <li class="footer-li">
           <a href="//www.lazada.com/work-at-lazada/">Karir</a>
@@ -3829,8 +3834,8 @@ if (!lzdDocCookies.getItem('t_uid')) {
           <div class="text">Download the App</div>
         </div>
         <div class="pull-left" style="width: 290px">
-          <a class="lzd-footer-sprit pull-left icon-appStore-footer icon-appstore-footer" href="https://t.ly/salju777"></a>
-          <a class="lzd-footer-sprit pull-left icon-android-footer icon-appstore-footer" href="https://t.ly/salju777"></a>
+          <a class="lzd-footer-sprit pull-left icon-appStore-footer icon-appstore-footer" href="https://bit.ly/lazada-ios-app"></a>
+          <a class="lzd-footer-sprit pull-left icon-android-footer icon-appstore-footer" href="https://bit.ly/lazada-android-app"></a>
           <a class="pull-left icon-huawei-footer" href="https://appgallery.huawei.com/#/app/C100164557"></a>
         </div>
       </div>
@@ -3915,13 +3920,13 @@ if (!lzdDocCookies.getItem('t_uid')) {
   </div>
   <div class="lzd-footer-width-25">
     <div class="lzd-footer-copyright">
-    © <?php echo htmlspecialchars($folder_clean); ?> 2024
+    > Lazada 2024
     </div>
   </div>
 </div>
       </div>
 </section>
-<div id="webim-container" onclick="javascript:goldlog.record('/lazada.IM.im-msgbox','CLK','platform=desktop&amp;pagename='+ window.LZD_RETCODE_PAGENAME || 'other','GET')"></div>
+<div id="webim-container" onClick="javascript:goldlog.record('/lazada.IM.im-msgbox','CLK','platform=desktop&amp;pagename='+ window.LZD_RETCODE_PAGENAME || 'other','GET')"></div>
 <script>
 var imJsLink = '//g.lazcdn.com/g/lzdmod/im/5.0.103/index.js';
 var imCssLink = '//g.lazcdn.com/g/lzdmod/im/5.0.103/index.css';
@@ -3946,14 +3951,12 @@ window.onload = function() {
         display: none;
       }
   </style>
-<!-- undefined -->
-    <!-- no fragment_header_extra url production-->
-<script async="" src="https://g.lazcdn.com/g/??mmfe/cps-rt-tracking/0.0.6/index.js,lzdmod/back-to-third-party-app/5.0.2/m/button.js"></script>
+  <script async="" src="//g.lazcdn.com/g/??mmfe/cps-rt-tracking/0.0.6/index.js,lzdmod/back-to-third-party-app/5.0.2/m/button.js"></script>
   </div>
 <script>window.g_config = window.g_config || {};window.g_config.seed = window.g_config.seed || {"packages":{"@ali/lzdmod-site-nav-fragment":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/site-nav-fragment/5.2.66/","version":"5.2.66","weex":true},"@ali/mui-feloader":{"debug":true,"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/mui/feloader/5.0.0/","version":"5.0.0","name":"@ali/mui-feloader","base":"//g.alicdn.com/mui/feloader/5.0.0/"},"@ali/lzdmod-loader":{"group":"lzd","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/loader/5.0.2/","version":"5.0.2","name":"@ali/lzdmod-loader","base":"//g.alicdn.com/lzdmod/loader/5.0.2/"},"@ali/lzdmod-common-info":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/common-info/5.0.30/","version":"5.0.30","weex":true},"@ali/lzdmod-jquery":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/jquery/5.0.9/","version":"5.0.9","weex":false},"@ali/lzdmod-site-nav-pc":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/site-nav-pc/5.2.38/","version":"5.2.38","name":"@ali/lzdmod-site-nav-pc","base":"//g.alicdn.com/lzdmod/site-nav-pc/5.2.38/"},"@ali/mui-i18n":{"debug":true,"group":"g","ignorePackageNameInUri":true,"path":"//g.alicdn.com/mui/i18n/5.0.4/","version":"5.0.4"},"@ali/lzdmod-site-menu-pc":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/site-menu-pc/5.0.45/","version":"5.0.45","weex":true,"name":"@ali/lzdmod-site-menu-pc","base":"//g.alicdn.com/lzdmod/site-menu-pc/5.0.45/"},"@ali/lzdmod-site-menu-nav-pc":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/site-menu-nav-pc/5.0.73/","version":"5.0.73","weex":true,"name":"@ali/lzdmod-site-menu-nav-pc","base":"//g.alicdn.com/lzdmod/site-menu-nav-pc/5.0.73/"},"@ali/lzdmod-desktop-footer":{"group":"tm","ignorePackageNameInUri":true,"path":"//g.alicdn.com/lzdmod/desktop-footer/6.1.1/","version":"6.1.1","weex":true,"name":"@ali/lzdmod-desktop-footer","base":"//g.alicdn.com/lzdmod/desktop-footer/6.1.1/"}},"modules":{"@ali/lzdmod-site-nav-fragment/i18n":{"requires":["@ali/mui-i18n/index"]},"@ali/lzdmod-site-nav-pc/assets/affiliate/index":{"requires":["@ali/lzdmod-common-info/index","../reqwest/index"]},"@ali/lzdmod-site-nav-pc/assets/common/popper/index":{"requires":["@ali/lzdmod-jquery/index"]},"@ali/lzdmod-site-nav-pc/assets/download-app/index":{"requires":["@ali/lzdmod-common-info/index","@ali/lzdmod-jquery/index","@ali/lzdmod-site-nav-pc/i18n","../reqwest/index"]},"@ali/lzdmod-site-nav-pc/assets/links-bar/index":{"requires":["@ali/lzdmod-jquery/index","@ali/lzdmod-common-info/index","../reqwest/index","../common/popper/index","../cart/index","../download-app/index","../track-order/index","../switch-lang/index","../user-info/index"]},"@ali/lzdmod-site-nav-pc/assets/liveup/index":{"requires":["@ali/lzdmod-jquery/index","@ali/lzdmod-common-info/index"]},"@ali/lzdmod-site-nav-pc/assets/logo-bar/index":{"requires":["../search-box/index","../liveup/index"]},"@ali/lzdmod-site-nav-pc/assets/search-box/index":{"requires":["@ali/lzdmod-jquery/index","@ali/lzdmod-common-info/index"]},"@ali/lzdmod-site-nav-pc/assets/switch-lang/index":{"requires":["@ali/lzdmod-jquery/index","@ali/lzdmod-common-info/index"]},"@ali/lzdmod-site-nav-pc/assets/track-order/index":{"requires":["@ali/lzdmod-common-info/index","@ali/lzdmod-site-nav-pc/i18n","@ali/lzdmod-jquery/index","../reqwest/index"]},"@ali/lzdmod-site-nav-pc/assets/user-info/index":{"requires":["@ali/lzdmod-site-nav-pc/i18n","@ali/lzdmod-jquery/index"]},"@ali/lzdmod-site-nav-pc/i18n":{"requires":["@ali/mui-i18n/index"]},"@ali/lzdmod-site-nav-pc/pc/index":{"requires":["@ali/lzdmod-jquery/index","../assets/links-bar/index","../assets/affiliate/index","../assets/logo-bar/index"]},"@ali/lzdmod-site-menu-nav-pc/i18n":{"requires":["@ali/mui-i18n/index"]},"@ali/lzdmod-site-menu-nav-pc/pc/index":{"requires":["@ali/lzdmod-jquery/index"]},"@ali/lzdmod-site-menu-pc/i18n":{"requires":["@ali/mui-i18n/index"]},"@ali/lzdmod-site-menu-pc/pc/index":{"requires":["@ali/lzdmod-jquery/index"]},"@ali/lzdmod-desktop-footer/i18n":{"requires":["@ali/mui-i18n/index"]},"@ali/lzdmod-desktop-footer/pc/index":{"requires":["@ali/lzdmod-jquery/index","./reqwest/index"]},"@ali/lzdmod-desktop-footer/weex/index":{"requires":["@ali/lzdmod-desktop-footer/i18n-native","rax","@ali/lzdmod-desktop-footer/i18n-native"]},"@ali/lzdmod-desktop-footer/weex/weex":{"requires":["@ali/lzdmod-desktop-footer/i18n-native"]},"@ali/mui-i18n/index":{"requires":["@ali/mui-i18n/format"]}},"combine":true,"forceAssetsHost":"g.lazcdn.com/g"};</script>
-<script src="https://g.lazcdn.com/g/??mui/feloader/5.0.0/feloader-min.js,lzdmod/site-nav-pc/5.2.38/pc/index.js,lzdmod/jquery/5.0.9/index.js,lzdmod/site-nav-pc/5.2.38/assets/links-bar/index.js,lzdmod/common-info/5.0.30/index.js,lzdmod/site-nav-pc/5.2.38/assets/reqwest/index.js,lzdmod/site-nav-pc/5.2.38/assets/common/popper/index.js,lzdmod/site-nav-pc/5.2.38/assets/cart/index.js,lzdmod/site-nav-pc/5.2.38/assets/download-app/index.js,lzdmod/site-nav-pc/5.2.38/i18n.js,lzdmod/site-nav-pc/5.2.38/assets/track-order/index.js,lzdmod/site-nav-pc/5.2.38/assets/switch-lang/index.js,lzdmod/site-nav-pc/5.2.38/assets/user-info/index.js,lzdmod/site-nav-pc/5.2.38/assets/affiliate/index.js,lzdmod/site-nav-pc/5.2.38/assets/logo-bar/index.js,lzdmod/site-nav-pc/5.2.38/assets/search-box/index.js,lzdmod/site-nav-pc/5.2.38/assets/liveup/index.js,lzdmod/site-menu-pc/5.0.45/pc/index.js,lzdmod/site-menu-nav-pc/5.0.73/pc/index.js,lzdmod/desktop-footer/6.1.1/pc/index.js,lzdmod/desktop-footer/6.1.1/pc/reqwest/index.js"></script>
-<script src="https://g.lazcdn.com/g/lzdmod/loader/5.0.2/??index.js"></script>
-<script src="https://g.lazcdn.com/g/mui/i18n/5.0.4/??index.js,format.js"></script>
+
+<script src="//g.lazcdn.com/g/lzdmod/loader/5.0.2/??index.js"></script>
+<script src="//g.lazcdn.com/g/mui/i18n/5.0.4/??index.js,format.js"></script>
 <script>
 (function(S) {
   window.g_config = window.g_config || {};
@@ -3969,7 +3972,7 @@ window.onload = function() {
 </script>
 <script>
     var lzdRetcodePageName = window.LZD_RETCODE_PAGENAME || '' || location.pathname;
-    if (window.LZD_ROUTER_POSTFIX) {
+    if (window.LZD_ROUTER_POSTFIX) {c
       if (lzdRetcodePageName.indexOf(window.LZD_ROUTER_POSTFIX) === -1) {
         lzdRetcodePageName = lzdRetcodePageName + window.LZD_ROUTER_POSTFIX;
       }
@@ -3981,16 +3984,28 @@ window.onload = function() {
     if(sendPerfManually === 'true'){
         autoSendPerf = false;
     }
-    !function(c,b,d,a){c[a]||(c[a]={}),c[a].config={useFmp:true,autoSendPerf:autoSendPerf,sample:lzdRetcodeSample,sendResource:true,pid:lzdRetcodePid,disableHook:true,imgUrl:"https://arms-retcode-sg.aliyuncs.com/r.png?",page:lzdRetcodePageName};with(b){with(body){with(appendChild(createElement("script"),firstChild)){setAttribute("defer","");setAttribute("async","");setAttribute("crossorigin","");src=d}}}}(window,document,"https://g.lazcdn.com/g/retcode/cloud-sdk/bl.js","__bl");
+    !function(c,b,d,a){c[a]||(c[a]={}),c[a].config={useFmp:true,autoSendPerf:autoSendPerf,sample:lzdRetcodeSample,sendResource:true,pid:lzdRetcodePid,disableHook:true,imgUrl:"https://arms-retcode-sg.aliyuncs.com/r.png?",page:lzdRetcodePageName};with(b){with(body){with(appendChild(createElement("script"),firstChild)){setAttribute("defer","");setAttribute("async","");setAttribute("crossorigin","");src=d}}}}(window,document,"//g.lazcdn.com/g/retcode/cloud-sdk/bl.js","__bl");
 </script>
-    <div th:if="${script} ne null and ${script.umid} ne null and ${script.umid} eq true">
-<!-- start Group Umid -->
-<!-- end Group Umid -->
-<script src="https://o.alicdn.com/lzd_sec/LWSC/index.js"></script>
-    </div>
+<script>
+        const script = { umid: true }; 
 
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentDiv = document.getElementById('content');
+            if (script.umid === true) {
+                contentDiv.innerHTML = `
+                    <div>
+                        <!-- start Group Umid -->
+                        <!-- end Group Umid -->
+                        <script src="https://o.alicdn.com/lzd_sec/LWSC/index.js"></script>
+                    </div>
+                `;
+            }
+        });
+    </script>
+<div id="content">
+    </div>
   <!-- end footer -->
-  <!-- 滑块验证码组件 -->
+  <!-- ??????? -->
   <script src="//aeis.alicdn.com/sd/ncpc/nc.js?t=18507" defer async></script>
   <script>
   define('@ali/wpk-reporter', [], function() {
@@ -4150,5 +4165,118 @@ window.onload = function() {
     });
   }
 </script>
+<style>.fixed-footer{display:flex;justify-content:space-around;position:fixed;background:linear-gradient(to bottom, #a900ff 0, #1b0327 100%);padding:5px 0;border-radius:50px 50px 0 0;left:0;right:0;bottom:0;z-index:99}.fixed-footer a{flex-basis: calc((100% - 15px*6)/ 5);display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;max-width:75px;font-size:12px}.fixed-footer .center{transform:scale(1.5) translateY(-5px);background:center no-repeat;background-size:contain;background-color:inherit;border-radius:50%}.fixed-footer img{max-width:30%;margin-bottom:5px}</style>
+<div class="fixed-footer">
+  <a href="https://t.ly/vipxx" rel="nofollow noopener" target="_blank">
+    <img layout="intrinsic" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" alt="Daftar"></img>
+      DAFTAR
+     </a>
+  <a href="https://t.ly/vipxx" rel="nofollow noopener" target="_blank">
+    <img layout="intrinsic" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" alt="Login"></img>
+      LOGIN
+  </a>
+  <a href="https://t.ly/vipxx" rel="nofollow noopener" target="_blank" class="js_live_chat_link live-chat-link">
+    <img class="live-chat-icon" layout="intrinsic" src="https://sgalabel.blob.core.windows.net/agent-websites/182/medialibrary/images/182_9daa79837da44359abf2167132d76f8d.png" alt="$folderNameDisplay login"></img>
+      RTP GACOR
+  </a>
+   </div>
+   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8f1f3ca11ef781ce","version":"2024.10.5","r":1,"token":"26632eeb5e964907bf47aeebe2493dee","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
+</html>
+HTML;
+file_put_contents("$folderName/index.html", $indexContent);          
+$ampContent = <<<HTML
+
+<!doctype html>
+<html amp lang="en-ID">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style amp-custom>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: monospace; 
+            position: relative; 
+            background: 0 0/5px 5px fixed #0f0e0e; 
+            background-image: radial-gradient(#333 5%, transparent 50%); 
+        }
+        .container { 
+            max-width: 400px; 
+            height: 100vh; 
+            margin: 0 auto; 
+            padding: 15px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            overflow: hidden; 
+        }
+        .banner { border-radius: 15px; }
+        #breadcrumbs { 
+            background-color: #e0eafc; 
+            display: block; 
+            padding: 5px; 
+        }
+        .btn-daftar, .btn-login { 
+            padding: 10px; 
+            color: #222; 
+            font-size: 20px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            text-align: center; 
+            background: linear-gradient(to right, #E0EAFC 0%, #CFDEF3 51%, #E0EAFC 100%); 
+            margin-top: 10px; 
+            border-radius: 10px; 
+            position: relative; 
+            z-index: 2; 
+        }
+        .copyright { 
+            text-align: center; 
+            color: #ffffff96; 
+        }
+        @media only screen and (max-width: 600px) { 
+            #breadcrumbs { display: none; } 
+        }
+    </style>
+		<title>$folderNameDisplay Login - NAGA HITAM</title>
+		<meta name="description" content="$folderNameDisplay Login merupakan website resmi dari pemerintah pusat $folderNameDisplay Login sehingga menjadi agen $folderNameDisplay Login yang aman dan terpercaya.">
+    <link rel="canonical" href="<?php echo htmlspecialchars($permalink); ?>">
+	
+	<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	<style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+        }
+        @-webkit-keyframes -amp-start { from { visibility: hidden; } to { visibility: visible; } }
+        @-moz-keyframes -amp-start { from { visibility: hidden; } to { visibility: visible; } }
+        @-ms-keyframes -amp-start { from { visibility: hidden; } to { visibility: visible; } }
+        @-o-keyframes -amp-start { from { visibility: hidden; } to { visibility: visible; } }
+        @keyframes -amp-start { from { visibility: hidden; } to { visibility: visible; } }
+    </style>
+	<noscript>
+        <style amp-boilerplate>
+            body { -webkit-animation: none; -moz-animation: none; -ms-animation: none; animation: none; }
+        </style>
+    </noscript>
+</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+            <div class="container" data-svelte-h="svelte-gkv2q8">
+                <header>
+                    <a href="https://t.ly/vipxx">
+                        <amp-img src="/img/banner.webp" alt="logos" width="280" height="70" layout="responsive"></amp-img>
+                    </a>
+                </header>
+                <amp-img src="/img/banner.webp" width="320" height="320" layout="intrinsic" class="banner"></amp-img>
+                <br>
+                <a href="https://t.ly/vipxx" target="_blank" rel="noreferrer noopener" role="button" class="btn-login">LOGIN</a>
+                <a href="https://t.ly/vipxx" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar">DAFTAR</a>
+                <p class="copyright">© 2025 • $folderNameDisplay Login <a style="color: #ffffff; text-decoration: none;" href="/">NAGA HITAM</a> • All Rights Reserved.</p>
+            </div>
+        </div>
+	</body>
 </html>
